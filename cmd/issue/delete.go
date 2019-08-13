@@ -2,6 +2,7 @@ package issue
 
 import (
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/3-shake/jira/pkg/issue"
@@ -112,18 +113,33 @@ func Delete(option *DeleteOption) error {
 	return nil
 }
 
+type DeleteCommand struct {
+	Issue *issue.Issue
+}
+
+func (cmd *DeleteCommand) Request(s *spinner.Spinner) error {
+	s.Suffix = fmt.Sprintf("  %v", cmd.Issue.Label())
+	s.FinalMSG = fmt.Sprintf("%v  %v \n", prompt.IconClear, cmd.Issue.Label())
+	err := issue.Delete(cmd.Issue.Key)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (cmd *DeleteCommand) Response() error {
+	return nil
+}
+
 func BatchDelete(issueSlice []*issue.Issue) {
 	s := spinner.New(spinner.CharSets[3], 100*time.Millisecond) // Build our new spinner
 	s.Color("magenta")
 	for _, issue := range issueSlice {
-		s.Suffix = fmt.Sprintf("  %v", issue.Label())
-		s.FinalMSG = fmt.Sprintf("%v  %v \n", prompt.IconClear, issue.Label())
-		s.Start()                   // Start the spinner
-		time.Sleep(3 * time.Second) // Run for some time to simulate work
-		s.Stop()
-		// err := Delete(issueID)
-		// if err != nil {
-		// log.Println(err)
-		// }
+		err := prompt.Loading(&DeleteCommand{
+			Issue: issue,
+		})
+		if err != nil {
+			log.Println(err)
+		}
 	}
 }

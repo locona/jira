@@ -7,16 +7,16 @@ import (
 )
 
 type Loader interface {
-	Request() error
+	Request(*spinner.Spinner) error
 	Response() error
 }
 
 func Loading(loader Loader) error {
 	s := spinner.New(spinner.CharSets[36], 100*time.Millisecond) // Build our new spinner
+	s.Start()
 	s.Prefix = " loading ...  "
 	s.Color("magenta")
-	s.Start()
-	err := loader.Request()
+	err := loader.Request(s)
 	time.Sleep(1 * time.Second)
 	s.Stop()
 

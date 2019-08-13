@@ -3,6 +3,7 @@ package issue
 import (
 	"github.com/3-shake/jira/pkg/issue"
 	"github.com/3-shake/jira/pkg/prompt"
+	"github.com/briandowns/spinner"
 	"github.com/spf13/cobra"
 )
 
@@ -29,7 +30,7 @@ type ListCommand struct {
 	Result []*issue.Issue
 }
 
-func (cmd *ListCommand) Request() error {
+func (cmd *ListCommand) Request(s *spinner.Spinner) error {
 	list, err := issue.List(cmd.Option)
 	if err != nil {
 		return err
