@@ -1,0 +1,6 @@
+- type: "タスク"
+  labels:
+    - qa
+  summary: "(cdp) Kafka + Spark Streaming 実装"
+  description: "(cdp) Kafka + Spark Streaming 実装"
+  assignee: "mako21983@gmail.com"
