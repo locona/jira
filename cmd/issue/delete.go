@@ -6,10 +6,10 @@ import (
 
 	"github.com/3-shake/jira/pkg/issue"
 	"github.com/3-shake/jira/pkg/prompt"
-	"github.com/AlecAivazis/survey/v2"
 	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
 	"github.com/spf13/cobra"
+	survey "gopkg.in/AlecAivazis/survey.v1"
 )
 
 type DeleteOption struct {
@@ -48,13 +48,10 @@ func Delete(option *DeleteOption) error {
 		return nil
 	}
 
-	listCmd := &ListCommand{Option: option.Search}
-	err := prompt.Progress(listCmd)
+	issueList, err := issue.List(option.Search)
 	if err != nil {
 		return err
 	}
-
-	issueList := listCmd.Result
 
 	var selectedItem string
 	prompt := &survey.Select{
@@ -62,7 +59,7 @@ func Delete(option *DeleteOption) error {
 		Options: []string{"SELECT", "CANCEL"},
 	}
 
-	err = survey.AskOne(prompt, &selectedItem)
+	err = survey.AskOne(prompt, &selectedItem, nil)
 	if err != nil {
 		return err
 	}
@@ -85,7 +82,7 @@ func Delete(option *DeleteOption) error {
 			Options: options,
 		}
 		deleteIssueOptions := make([]string, 0)
-		err := survey.AskOne(deletePrompt, &deleteIssueOptions)
+		err := survey.AskOne(deletePrompt, &deleteIssueOptions, nil)
 		if err != nil {
 			return err
 		}
@@ -100,7 +97,7 @@ func Delete(option *DeleteOption) error {
 		prompt := &survey.Confirm{
 			Message: "Do you really want to delete this?",
 		}
-		survey.AskOne(prompt, &confirm)
+		survey.AskOne(prompt, &confirm, nil)
 		if !confirm {
 			return nil
 		}
