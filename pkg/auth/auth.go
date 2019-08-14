@@ -10,6 +10,7 @@ import (
 	"strings"
 
 	jira "github.com/andygrunwald/go-jira"
+	"github.com/pkg/errors"
 )
 
 const baseurl = "https://3-shake.atlassian.net"
@@ -31,7 +32,14 @@ func (a *Auth) Health() error {
 		return err
 	}
 
-	_, _, err = cli.Project.GetList()
+	users, _, err := cli.User.Find(a.Username)
+	if err != nil {
+		return err
+	}
+	if len(users) == 0 {
+		return errors.Wrapf(err, "Email: %v", a.Username)
+	}
+
 	return err
 }
 

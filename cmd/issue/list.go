@@ -17,7 +17,6 @@ func NewCommandList() *cobra.Command {
 		},
 	}
 
-	cmd.Flags().BoolVarP(&listOption.Verbose, "verbose", "v", false, "Verbose.")
 	cmd.Flags().StringSliceVar(&listOption.Labels, "labels", []string{}, "Labels.")
 	cmd.Flags().StringVar(&listOption.Status, "status", "", "Status.")
 	cmd.Flags().StringVar(&listOption.Summary, "summary", "", "Summary.")
@@ -29,6 +28,10 @@ func NewCommandList() *cobra.Command {
 type ListCommand struct {
 	Option *issue.Search
 	Result []jira.Issue
+}
+
+func (cmd *ListCommand) BeforeRequest(s *spinner.Spinner) *spinner.Spinner {
+	return s
 }
 
 func (cmd *ListCommand) Request(s *spinner.Spinner) error {
@@ -46,7 +49,7 @@ func (cmd *ListCommand) Response() error {
 }
 
 func List(option *issue.Search) error {
-	return prompt.Loading(&ListCommand{
+	return prompt.Progress(&ListCommand{
 		Option: option,
 	})
 }

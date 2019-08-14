@@ -9,31 +9,7 @@ import (
 	"github.com/andygrunwald/go-jira"
 )
 
-// type Issue struct {
-// ID     string  `yaml:"id"`
-// Key    string  `yaml"key"`
-// Fields *Fields `yaml:"fields"`
-//
-// fields *jira.IssueFields
-// }
-//
-// func (i *Issue) Label() string {
-// format := "%v: %v"
-// return fmt.Sprintf(format, i.Key, i.Fields.Summary)
-// }
-
-// type Fields struct {
-// Type        *jira.IssueType `yaml:"type,omitempty"`
-// Labels      []string        `yaml:"labels,omitempty"`
-// Summary     string          `yaml:"summary,omitempty"`
-// Status      *jira.Status    `yaml:"status,omitempty"`
-// Description string          `yaml:"description,omitempty"`
-// Assignee    *jira.User      `yaml:"assignee,omitempty"`
-// Reporter    *jira.User      `yaml:"reporter,omitempty"`
-// }
-
 type Search struct {
-	Verbose         bool     `json:"-"`
 	AffectedVersion string   `json:"AffectedVersion"`
 	Assignee        string   `json:"assignee"`
 	Comment         string   `json:"comment"`

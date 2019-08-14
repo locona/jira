@@ -44,3 +44,18 @@ project.show:
 issue.delete.i:
 	@go install
 	@jira issue delete -i
+
+.PHONY: issue.epic
+issue.epic:
+	@go install
+	@jira issue epic
+
+.PHONY: issue.create
+issue.create:
+	@go install
+	@jira issue create -f example.yaml
+
+.PHONY: user.show
+user.show:
+	@go install
+	@jira user show
