@@ -1,12 +1,12 @@
 package issue
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 
 	"github.com/3-shake/jira/pkg/issue"
 	"github.com/3-shake/jira/pkg/prompt"
+	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
 	"github.com/spf13/cobra"
 	"gopkg.in/yaml.v2"
@@ -30,24 +30,22 @@ func NewCommandCreate() *cobra.Command {
 }
 
 type CreateCommand struct {
-	Value *issue.CreateValue
+	Value  *issue.CreateValue
+	Result []jira.Issue
 }
 
 func (cmd *CreateCommand) Request(s *spinner.Spinner) error {
-	// NOTE: for bug survey
-	var suf = make([]byte, 100)
-	copy(suf, cmd.Value.Summary)
-	s.Suffix = string(suf)
-
 	created, err := issue.Create(cmd.Value)
 	if err != nil {
 		return err
 	}
-	s.FinalMSG = fmt.Sprintf("%v  %v \n", prompt.IconClear, issue.Label(*created))
+
+	cmd.Result = created
 	return nil
 }
 
 func (cmd *CreateCommand) Response() error {
+	issue.ViewTable(cmd.Result)
 	return nil
 }
 

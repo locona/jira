@@ -1,6 +1,13 @@
 - type: "タスク"
   labels:
     - qa
-  summary: "(cdp) Kafka + Spark Streaming 実装"
-  description: "(cdp) Kafka + Spark Streaming 実装"
-  assignee: "mako21983@gmail.com"
+  summary: "(DEMO) サブタスク 実装"
+  description: "(DEMO) サブタスク 実装"
+  assignee: "miyamae@3-shake.com"
+  subtasks:
+  - type: "タスク"
+    labels:
+      - qa
+    summary: "(DEMO) サブタスク 実装"
+    description: "(DEMO) サブタスク 実装"
+    assignee: "miyamae@3-shake.com"

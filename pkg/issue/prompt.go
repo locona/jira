@@ -6,11 +6,15 @@ import (
 )
 
 func ViewTable(issues []jira.Issue) {
-	header := []string{"Key", "Summary", "Description"}
+	header := []string{"ID", "ParentID", "Summary", "Description"}
 	data := make([][]string, len(issues))
 	for i, _ := range issues {
 		issue := issues[i]
-		data[i] = []string{issue.Key, issue.Fields.Summary, issue.Fields.Description}
+		parentID := ""
+		if issue.Fields.Parent != nil {
+			parentID = issue.Fields.Parent.Key
+		}
+		data[i] = []string{issue.Key, parentID, issue.Fields.Summary, issue.Fields.Description}
 	}
 
 	prompt.Table(header, data)

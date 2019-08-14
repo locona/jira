@@ -53,7 +53,7 @@ issue.epic:
 .PHONY: issue.create
 issue.create:
 	@go install
-	@jira issue create -f example.yaml
+	@jira issue create -f examples/issue_create.yaml
 
 .PHONY: user.list
 user.list:
