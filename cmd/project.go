@@ -12,9 +12,11 @@ var projectCmd = &cobra.Command{
 
 func init() {
 	listCmd := project.NewCommandList()
+	showCmd := project.NewCommandShow()
 	nsCmd := project.NewCommandNamespace()
 	projectCmd.AddCommand(
 		listCmd,
+		showCmd,
 		nsCmd,
 	)
 	rootCmd.AddCommand(projectCmd)

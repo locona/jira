@@ -35,6 +35,11 @@ project.list:
 	@go install
 	@jira project list
 
+.PHONY: project.show
+project.show:
+	@go install
+	@jira project show
+
 .PHONY: issue.delete.i
 issue.delete.i:
 	@go install
