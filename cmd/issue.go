@@ -15,11 +15,13 @@ func init() {
 	createCmd := issue.NewCommandCreate()
 	epicCmd := issue.NewCommandEpic()
 	deleteCmd := issue.NewCommandDelete()
+	transitionCmd := issue.NewCommandTransition()
 	inputCmd.AddCommand(
 		listCmd,
 		createCmd,
 		epicCmd,
 		deleteCmd,
+		transitionCmd,
 	)
 	rootCmd.AddCommand(inputCmd)
 }

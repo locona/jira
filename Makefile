@@ -50,6 +50,11 @@ issue.epic:
 	@go install
 	@jira issue epic
 
+.PHONY: issue.transition
+issue.transition:
+	@go install
+	@jira issue transition
+
 .PHONY: issue.create
 issue.create:
 	@go install
