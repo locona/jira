@@ -9,26 +9,28 @@ import (
 	"github.com/andygrunwald/go-jira"
 )
 
-type Issue struct {
-	ID     string
-	Key    string
-	Fields *Fields
-}
+// type Issue struct {
+// ID     string  `yaml:"id"`
+// Key    string  `yaml"key"`
+// Fields *Fields `yaml:"fields"`
+//
+// fields *jira.IssueFields
+// }
+//
+// func (i *Issue) Label() string {
+// format := "%v: %v"
+// return fmt.Sprintf(format, i.Key, i.Fields.Summary)
+// }
 
-func (i *Issue) Label() string {
-	format := "%v: %v"
-	return fmt.Sprintf(format, i.Key, i.Fields.Summary)
-}
-
-type Fields struct {
-	Type        *jira.IssueType `json:"type,omitempty"`
-	Labels      []string        `json:"labels,omitempty"`
-	Summary     string          `json:"summary,omitempty"`
-	Status      *jira.Status    `json:"status,omitempty"`
-	Description string          `json:"description,omitempty"`
-	Assignee    *jira.User      `json:"assignee,omitempty"`
-	Reporter    *jira.User      `json:"reporter,omitempty"`
-}
+// type Fields struct {
+// Type        *jira.IssueType `yaml:"type,omitempty"`
+// Labels      []string        `yaml:"labels,omitempty"`
+// Summary     string          `yaml:"summary,omitempty"`
+// Status      *jira.Status    `yaml:"status,omitempty"`
+// Description string          `yaml:"description,omitempty"`
+// Assignee    *jira.User      `yaml:"assignee,omitempty"`
+// Reporter    *jira.User      `yaml:"reporter,omitempty"`
+// }
 
 type Search struct {
 	Verbose         bool     `json:"-"`
@@ -54,7 +56,7 @@ type Search struct {
 	Reporter        string   `json:"reporter"`
 }
 
-func List(op *Search) ([]*Issue, error) {
+func List(op *Search) ([]jira.Issue, error) {
 	projectName, err := project.Current()
 	if err != nil {
 		return nil, err
@@ -104,33 +106,5 @@ func List(op *Search) ([]*Issue, error) {
 		return nil, err
 	}
 
-	res := make([]*Issue, 0)
-	for _, issue := range issues {
-		if op.Verbose {
-			res = append(res, &Issue{
-				ID:  issue.ID,
-				Key: issue.Key,
-				Fields: &Fields{
-					Type:        &issue.Fields.Type,
-					Labels:      issue.Fields.Labels,
-					Summary:     issue.Fields.Summary,
-					Status:      issue.Fields.Status,
-					Description: issue.Fields.Description,
-					Assignee:    issue.Fields.Assignee,
-					Reporter:    issue.Fields.Reporter,
-				},
-			})
-			continue
-		}
-
-		res = append(res, &Issue{
-			ID:  issue.ID,
-			Key: issue.Key,
-			Fields: &Fields{
-				Summary:     issue.Fields.Summary,
-				Description: issue.Fields.Description,
-			},
-		})
-	}
-	return res, nil
+	return issues, nil
 }

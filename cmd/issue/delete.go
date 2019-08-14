@@ -8,6 +8,7 @@ import (
 	"github.com/3-shake/jira/pkg/issue"
 	"github.com/3-shake/jira/pkg/prompt"
 	"github.com/AlecAivazis/survey/v2"
+	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
 	"github.com/spf13/cobra"
 )
@@ -72,11 +73,11 @@ func Delete(option *DeleteOption) error {
 	}
 
 	options := make([]string, 0)
-	mapOptionToIssue := make(map[string]*issue.Issue)
-	for _, issue := range issueList {
-		op := issue.Label()
+	mapOptionToIssue := make(map[string]jira.Issue)
+	for _, is := range issueList {
+		op := issue.Label(is)
 		options = append(options, op)
-		mapOptionToIssue[op] = issue
+		mapOptionToIssue[op] = is
 	}
 
 	if selectedItem == "SELECT" {
@@ -90,7 +91,7 @@ func Delete(option *DeleteOption) error {
 			return err
 		}
 
-		deleteIssueSlice := make([]*issue.Issue, 0)
+		deleteIssueSlice := make([]jira.Issue, 0)
 		for _, op := range deleteIssueOptions {
 			issue := mapOptionToIssue[op]
 			deleteIssueSlice = append(deleteIssueSlice, issue)
@@ -114,12 +115,13 @@ func Delete(option *DeleteOption) error {
 }
 
 type DeleteCommand struct {
-	Issue *issue.Issue
+	Issue jira.Issue
 }
 
 func (cmd *DeleteCommand) Request(s *spinner.Spinner) error {
-	s.Suffix = fmt.Sprintf("  %v", cmd.Issue.Label())
-	s.FinalMSG = fmt.Sprintf("%v  %v \n", prompt.IconClear, cmd.Issue.Label())
+	label := issue.Label(cmd.Issue)
+	s.Suffix = fmt.Sprintf("  %v", label)
+	s.FinalMSG = fmt.Sprintf("%v  %v \n", prompt.IconClear, label)
 	err := issue.Delete(cmd.Issue.Key)
 	if err != nil {
 		return err
@@ -131,7 +133,7 @@ func (cmd *DeleteCommand) Response() error {
 	return nil
 }
 
-func BatchDelete(issueSlice []*issue.Issue) {
+func BatchDelete(issueSlice []jira.Issue) {
 	s := spinner.New(spinner.CharSets[3], 100*time.Millisecond) // Build our new spinner
 	s.Color("magenta")
 	for _, issue := range issueSlice {

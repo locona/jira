@@ -3,6 +3,7 @@ package issue
 import (
 	"github.com/3-shake/jira/pkg/issue"
 	"github.com/3-shake/jira/pkg/prompt"
+	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
 	"github.com/spf13/cobra"
 )
@@ -27,15 +28,15 @@ func NewCommandList() *cobra.Command {
 
 type ListCommand struct {
 	Option *issue.Search
-	Result []*issue.Issue
+	Result []jira.Issue
 }
 
 func (cmd *ListCommand) Request(s *spinner.Spinner) error {
-	list, err := issue.List(cmd.Option)
+	issues, err := issue.List(cmd.Option)
 	if err != nil {
 		return err
 	}
-	cmd.Result = list
+	cmd.Result = issues
 	return nil
 }
 
