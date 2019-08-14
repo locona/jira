@@ -55,6 +55,11 @@ issue.create:
 	@go install
 	@jira issue create -f example.yaml
 
+.PHONY: user.list
+user.list:
+	@go install
+	@jira user list
+
 .PHONY: user.show
 user.show:
 	@go install

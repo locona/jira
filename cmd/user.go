@@ -11,8 +11,10 @@ var userCmd = &cobra.Command{
 }
 
 func init() {
+	listCmd := user.NewCommandList()
 	showCmd := user.NewCommandShow()
 	userCmd.AddCommand(
+		listCmd,
 		showCmd,
 	)
 	rootCmd.AddCommand(userCmd)
