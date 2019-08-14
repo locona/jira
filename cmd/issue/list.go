@@ -30,10 +30,6 @@ type ListCommand struct {
 	Result []jira.Issue
 }
 
-func (cmd *ListCommand) BeforeRequest(s *spinner.Spinner) *spinner.Spinner {
-	return s
-}
-
 func (cmd *ListCommand) Request(s *spinner.Spinner) error {
 	issues, err := issue.List(cmd.Option)
 	if err != nil {
