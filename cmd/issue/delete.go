@@ -38,7 +38,7 @@ func NewCommandDelete() *cobra.Command {
 	cmd.Flags().StringVar(&deleteOption.Search.Status, "status", "", "Status.")
 	cmd.Flags().StringVar(&deleteOption.Search.Summary, "summary", "", "Summary.")
 	cmd.Flags().StringVar(&deleteOption.Search.Assignee, "assignee", "own", "Assignee.")
-	cmd.Flags().StringVar(&deleteOption.Search.Reporter, "reporter", "", "Status.")
+	cmd.Flags().StringVar(&deleteOption.Search.Reporter, "reporter", "", "Reporter.")
 	return cmd
 }
 
@@ -53,21 +53,6 @@ func Delete(option *DeleteOption) error {
 		return err
 	}
 
-	var selectedItem string
-	prompt := &survey.Select{
-		Message: "Select Delete Type",
-		Options: []string{"SELECT", "CANCEL"},
-	}
-
-	err = survey.AskOne(prompt, &selectedItem, nil)
-	if err != nil {
-		return err
-	}
-
-	if selectedItem == "CANCEL" {
-		return nil
-	}
-
 	options := make([]string, 0)
 	mapOptionToIssue := make(map[string]jira.Issue)
 	for _, is := range issueList {
@@ -76,37 +61,32 @@ func Delete(option *DeleteOption) error {
 		mapOptionToIssue[op] = is
 	}
 
-	if selectedItem == "SELECT" {
-		deletePrompt := &survey.MultiSelect{
-			Message: "Select Delete ISSUE ID",
-			Options: options,
-		}
-		deleteIssueOptions := make([]string, 0)
-		err := survey.AskOne(deletePrompt, &deleteIssueOptions, nil)
-		if err != nil {
-			return err
-		}
+	deletePrompt := &survey.MultiSelect{
+		Message: "Select Delete ISSUE ID",
+		Options: options,
+	}
+	deleteIssueOptions := make([]string, 0)
+	err = survey.AskOne(deletePrompt, &deleteIssueOptions, nil)
+	if err != nil {
+		return err
+	}
 
-		deleteIssueSlice := make([]jira.Issue, 0)
-		for _, op := range deleteIssueOptions {
-			issue := mapOptionToIssue[op]
-			deleteIssueSlice = append(deleteIssueSlice, issue)
-		}
+	deleteIssueSlice := make([]jira.Issue, 0)
+	for _, op := range deleteIssueOptions {
+		issue := mapOptionToIssue[op]
+		deleteIssueSlice = append(deleteIssueSlice, issue)
+	}
 
-		confirm := false
-		prompt := &survey.Confirm{
-			Message: "Do you really want to delete this?",
-		}
-		survey.AskOne(prompt, &confirm, nil)
-		if !confirm {
-			return nil
-		}
-
-		BatchDelete(deleteIssueSlice)
+	confirm := false
+	prompt := &survey.Confirm{
+		Message: "Do you really want to delete this?",
+	}
+	survey.AskOne(prompt, &confirm, nil)
+	if !confirm {
 		return nil
 	}
 
-	// BatchDelete(option.IssueIDList)
+	BatchDelete(deleteIssueSlice)
 	return nil
 }
 
