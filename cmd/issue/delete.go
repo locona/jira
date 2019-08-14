@@ -52,13 +52,6 @@ func Delete(option *DeleteOption) error {
 	if err != nil {
 		return err
 	}
-	// listCmd := &ListCommand{Option: option.Search}
-	// err := prompt.Progress(listCmd)
-	// if err != nil {
-	// return err
-	// }
-	//
-	// issueList := listCmd.Result
 
 	var selectedItem string
 	prompt := &survey.Select{

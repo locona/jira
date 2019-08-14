@@ -1,14 +1,10 @@
 package cmd
 
 import (
-	"bufio"
-	"fmt"
-	"os"
-	"syscall"
-
+	"github.com/3-shake/jira/cmd/project"
 	"github.com/3-shake/jira/pkg/auth"
+	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
-	"golang.org/x/crypto/ssh/terminal"
 )
 
 // authCmd represents the auth command
@@ -24,13 +20,37 @@ func init() {
 }
 
 func Auth() error {
-	fmt.Print("Username: ")
-	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Scan()
-	username := scanner.Text()
+	promptUsername := promptui.Prompt{
+		Label: "User Name",
+	}
+	username, err := promptUsername.Run()
+	if err != nil {
+		return err
+	}
 
-	fmt.Print("Password: ")
-	password, _ := terminal.ReadPassword(int(syscall.Stdin))
-	auth.Write(username, string(password))
+	promptPassword := promptui.Prompt{
+		Label: "Password",
+		Mask:  '*',
+	}
+	password, err := promptPassword.Run()
+	if err != nil {
+		return err
+	}
+
+	_auth, err := auth.Authenticate(username, password)
+	if err != nil {
+		return err
+	}
+
+	err = _auth.Store()
+	if err != nil {
+		return err
+	}
+
+	err = project.Namespace()
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
