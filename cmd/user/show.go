@@ -23,10 +23,6 @@ type ShowCommand struct {
 	Result []jira.User
 }
 
-func (cmd *ShowCommand) BeforeRequest(s *spinner.Spinner) *spinner.Spinner {
-	return s
-}
-
 func (cmd *ShowCommand) Request(s *spinner.Spinner) error {
 	user, err := user.FirstByEmail("miyamae@3-shake.com")
 	if err != nil {
