@@ -1,0 +1,15 @@
+- type: "タスク"
+  labels:
+    - qa
+  summary: "CLI TOOL テスト"
+  description: "CLI TOOL テスト"
+  assignee: "miyamae@3-shake.com"
+
+  subtasks:
+    - type: "タスク"
+      labels:
+        - qa
+      summary: "サブタスク LI TOOL テスト"
+      description: "サブタスク CLI TOOL テスト"
+      assignee: "miyamae@3-shake.com"
+      # issuetype="Epic"
