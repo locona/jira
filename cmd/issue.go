@@ -12,12 +12,14 @@ var inputCmd = &cobra.Command{
 
 func init() {
 	listCmd := issue.NewCommandList()
+	assignCmd := issue.NewCommandAssign()
 	applyCmd := issue.NewCommandApply()
 	epicCmd := issue.NewCommandEpic()
 	deleteCmd := issue.NewCommandDelete()
 	transitionCmd := issue.NewCommandTransition()
 	inputCmd.AddCommand(
 		listCmd,
+		assignCmd,
 		applyCmd,
 		epicCmd,
 		deleteCmd,

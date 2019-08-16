@@ -26,11 +26,6 @@ func Apply(v *ApplyValue) ([]jira.Issue, error) {
 		return nil, err
 	}
 
-	cli, err := auth.Client()
-	if err != nil {
-		return nil, err
-	}
-
 	myInfo, _ := auth.Read()
 	reporter, err := user.FirstByEmail(myInfo.Username)
 	if err != nil {
@@ -59,7 +54,7 @@ func Apply(v *ApplyValue) ([]jira.Issue, error) {
 		},
 	}
 
-	appliedParentIssue, err := apply(cli, parentIssue)
+	appliedParentIssue, err := apply(parentIssue)
 	if err != nil {
 		return nil, err
 	}
@@ -90,7 +85,7 @@ func Apply(v *ApplyValue) ([]jira.Issue, error) {
 	res := make([]jira.Issue, 0)
 	res = append(res, *appliedParentIssue)
 	for idx := range subtasks {
-		appliedChildIssue, err := apply(cli, subtasks[idx])
+		appliedChildIssue, err := apply(subtasks[idx])
 		if err != nil {
 			log.Println(err)
 			continue
@@ -102,15 +97,20 @@ func Apply(v *ApplyValue) ([]jira.Issue, error) {
 	return res, nil
 }
 
-func apply(cli *jira.Client, issue *jira.Issue) (*jira.Issue, error) {
+func apply(issue *jira.Issue) (*jira.Issue, error) {
 	if issue.Key == "" {
-		return create(cli, issue)
+		return Create(issue)
 	}
 
-	return update(cli, issue)
+	return Update(issue)
 }
 
-func create(cli *jira.Client, issue *jira.Issue) (*jira.Issue, error) {
+func Create(issue *jira.Issue) (*jira.Issue, error) {
+	cli, err := auth.Client()
+	if err != nil {
+		return nil, err
+	}
+
 	created, _, err := cli.Issue.Create(issue)
 	if err != nil {
 		return nil, err
@@ -124,7 +124,12 @@ func create(cli *jira.Client, issue *jira.Issue) (*jira.Issue, error) {
 	return res, nil
 }
 
-func update(cli *jira.Client, issue *jira.Issue) (*jira.Issue, error) {
+func Update(issue *jira.Issue) (*jira.Issue, error) {
+	cli, err := auth.Client()
+	if err != nil {
+		return nil, err
+	}
+
 	updated, _, err := cli.Issue.Update(issue)
 	if err != nil {
 		return nil, err

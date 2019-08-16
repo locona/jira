@@ -55,10 +55,15 @@ issue.transition:
 	@go install
 	@jira issue transition
 
-.PHONY: issue.create
-issue.create:
+.PHONY: issue.assign
+issue.assign:
 	@go install
-	@jira issue create -f examples/issue_create.yaml
+	@jira issue assign
+
+.PHONY: issue.apply
+issue.apply:
+	@go install
+	@jira issue apply -f examples/issue_create.yaml
 
 .PHONY: user.list
 user.list:
