@@ -16,14 +16,14 @@ func init() {
 	applyCmd := issue.NewCommandApply()
 	epicCmd := issue.NewCommandEpic()
 	deleteCmd := issue.NewCommandDelete()
-	transitionCmd := issue.NewCommandTransition()
+	statusCmd := issue.NewCommandStatus()
 	inputCmd.AddCommand(
 		listCmd,
 		assignCmd,
 		applyCmd,
 		epicCmd,
 		deleteCmd,
-		transitionCmd,
+		statusCmd,
 	)
 	rootCmd.AddCommand(inputCmd)
 }
