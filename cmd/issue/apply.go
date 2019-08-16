@@ -12,57 +12,57 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-type CreateOption struct {
+type ApplyOption struct {
 	FilePath string
 }
 
-func NewCommandCreate() *cobra.Command {
-	createOption := &CreateOption{}
+func NewCommandApply() *cobra.Command {
+	applyOption := &ApplyOption{}
 	cmd := &cobra.Command{
-		Use: "create",
+		Use: "apply",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return Create(createOption)
+			return Apply(applyOption)
 		},
 	}
 
-	cmd.Flags().StringVarP(&createOption.FilePath, "file", "f", "", "Status.")
+	cmd.Flags().StringVarP(&applyOption.FilePath, "file", "f", "", "Status.")
 	return cmd
 }
 
-type CreateCommand struct {
-	Value  *issue.CreateValue
+type ApplyCommand struct {
+	Value  *issue.ApplyValue
 	Result []jira.Issue
 }
 
-func (cmd *CreateCommand) Request(s *spinner.Spinner) error {
-	created, err := issue.Create(cmd.Value)
+func (cmd *ApplyCommand) Request(s *spinner.Spinner) error {
+	applied, err := issue.Apply(cmd.Value)
 	if err != nil {
 		return err
 	}
 
-	cmd.Result = created
+	cmd.Result = applied
 	return nil
 }
 
-func (cmd *CreateCommand) Response() error {
+func (cmd *ApplyCommand) Response() error {
 	issue.ViewTable(cmd.Result)
 	return nil
 }
 
-func Create(option *CreateOption) error {
+func Apply(option *ApplyOption) error {
 	buf, err := ioutil.ReadFile(option.FilePath)
 	if err != nil {
 		return err
 	}
 
-	values := make([]*issue.CreateValue, 0)
+	values := make([]*issue.ApplyValue, 0)
 	err = yaml.Unmarshal(buf, &values)
 	if err != nil {
 		return err
 	}
 
 	for _, v := range values {
-		err := prompt.Progress(&CreateCommand{
+		err := prompt.Progress(&ApplyCommand{
 			Value: v,
 		})
 		if err != nil {

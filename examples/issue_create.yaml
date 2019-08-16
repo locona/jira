@@ -1,6 +1,8 @@
 - type: "タスク"
   labels:
     - qa
+    - dev
+  key: "REC-816"
   summary: "(DEMO) サブタスク 実装"
   description: "(DEMO) サブタスク 実装"
   assignee: "miyamae@3-shake.com"
