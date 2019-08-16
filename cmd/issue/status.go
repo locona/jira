@@ -13,23 +13,23 @@ import (
 	survey "gopkg.in/AlecAivazis/survey.v1"
 )
 
-func NewCommandTransition() *cobra.Command {
+func NewCommandStatus() *cobra.Command {
 	cmd := &cobra.Command{
-		Use: "transition",
+		Use: "status",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return Transition()
+			return Status()
 		},
 	}
 
 	return cmd
 }
 
-type TransitionCommand struct {
+type StatusCommand struct {
 	Issue      *jira.Issue
 	Transition *jira.Transition
 }
 
-func (cmd *TransitionCommand) Request(s *spinner.Spinner) error {
+func (cmd *StatusCommand) Request(s *spinner.Spinner) error {
 	label := issue.Label(*cmd.Issue)
 
 	suffixFormat := "%v : Status To `%v`"
@@ -48,11 +48,11 @@ func (cmd *TransitionCommand) Request(s *spinner.Spinner) error {
 	return nil
 }
 
-func (cmd *TransitionCommand) Response() error {
+func (cmd *StatusCommand) Response() error {
 	return nil
 }
 
-func Transition() error {
+func Status() error {
 	selectedIssueSlice, err := multiSelectIssue("Select the issue status you whose status you want to change.")
 	if err != nil {
 		return err
@@ -68,7 +68,7 @@ func Transition() error {
 	}
 
 	for idx := range selectedIssueSlice {
-		err := prompt.Progress(&TransitionCommand{
+		err := prompt.Progress(&StatusCommand{
 			Issue:      selectedIssueSlice[idx],
 			Transition: selectedTransition,
 		})
@@ -79,40 +79,6 @@ func Transition() error {
 
 	return nil
 }
-
-//
-// func multiSelectIssue() ([]*jira.Issue, error) {
-// issueList, err := issue.List(&issue.Search{})
-// if err != nil {
-// return nil, err
-// }
-//
-// options := make([]string, 0)
-// mapOptionToIssue := make(map[string]jira.Issue)
-// for _, is := range issueList {
-// op := issue.Label(is)
-// options = append(options, op)
-// mapOptionToIssue[op] = is
-// }
-//
-// prompt := &survey.MultiSelect{
-// Message: "Select the issue status you whose status you want to change.",
-// Options: options,
-// }
-// targetOptionSlice := make([]string, 0)
-// err = survey.AskOne(prompt, &targetOptionSlice, nil)
-// if err != nil {
-// return nil, err
-// }
-//
-// res := make([]*jira.Issue, 0)
-// for _, target := range targetOptionSlice {
-// is := mapOptionToIssue[target]
-// res = append(res, &is)
-// }
-//
-// return res, nil
-// }
 
 func selectTransition(issueID string) (*jira.Transition, error) {
 	transitions, err := issue.TransitionList(issueID)
