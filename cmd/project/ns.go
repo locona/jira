@@ -29,10 +29,8 @@ var templates = &promptui.SelectTemplates{
 }
 
 func Namespace() error {
-	currentProject, err := project.Current()
-	if err != nil {
-		return err
-	}
+	currentProject, _ := project.Current()
+
 	list, err := project.List()
 	if err != nil {
 		return err
