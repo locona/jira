@@ -1,18 +1,19 @@
 package gitconfig
 
 import (
-	"errors"
 	"io/ioutil"
 	"os"
 	"strings"
 
 	"github.com/dlclark/regexp2"
+	"github.com/pkg/errors"
 )
 
 const (
-	gitconfigPath = ".git/config"
-	regexpGitURL  = `(.+@)*([\w\d\.]+):(.*)`
-	regexpGitPath = ".*(?=.git)"
+	gitconfigPath     = ".git/config"
+	regexpGitHTTPSURL = `(?:https+):(\/\/)?(.*?)(\.git)(\/?|\#[-\d\w._]+?)$`
+	regexpGitSSHURL   = `(?:git@[-\w.]+):(\/\/)?(.*?)(\.git)(\/?|\#[-\d\w._]+?)$`
+	regexpGitPath     = ".*(?=.git)"
 
 	utf8BOM = "\357\273\277"
 )
@@ -58,7 +59,6 @@ type config struct {
 
 type RemoteConfig struct {
 	URL          string
-	Host         string
 	Organization string
 	Repository   string
 }
@@ -394,31 +394,41 @@ func isnum(c byte) bool {
 }
 
 func NewRemoteConfig(url string) (*RemoteConfig, error) {
-	re, err := regexp2.Compile(regexpGitURL, 0)
-	if err != nil {
-		return nil, err
-	}
-	m, err := re.FindStringMatch(url)
+	m, err := regexpGitURL(url)
 	if err != nil {
 		return nil, err
 	}
 
 	groups := m.Groups()
-	host := groups[1].Capture.String()
-
-	rePath, _ := regexp2.Compile(regexpGitPath, 0)
-	mPath, err := rePath.FindStringMatch(groups[3].Capture.String())
-	if err != nil {
-		return nil, err
-	}
-	splited := strings.Split(mPath.String(), "/")
+	splited := strings.Split(groups[2].Capture.String(), "/")
 	organization := splited[0]
 	repository := splited[1]
 
 	return &RemoteConfig{
 		URL:          url,
-		Host:         host,
 		Organization: organization,
 		Repository:   repository,
 	}, nil
+}
+
+func regexpGitURL(url string) (*regexp2.Match, error) {
+	reSSH, err := regexp2.Compile(regexpGitSSHURL, 0)
+	if err != nil {
+		return nil, err
+	}
+	mSSH, err := reSSH.FindStringMatch(url)
+	if mSSH != nil {
+		return mSSH, nil
+	}
+
+	reHTTPS, err := regexp2.Compile(regexpGitHTTPSURL, 0)
+	if err != nil {
+		return nil, err
+	}
+
+	mHTTPS, err := reHTTPS.FindStringMatch(url)
+	if mHTTPS == nil || err != nil {
+		return nil, errors.Wrapf(err, "Not match URL: %v", url)
+	}
+	return mHTTPS, nil
 }
