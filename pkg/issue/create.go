@@ -27,12 +27,13 @@ func Apply(v *ApplyValue) ([]jira.Issue, error) {
 	}
 
 	myInfo, _ := auth.Read()
-	reporter, err := user.FirstByEmail(myInfo.Username)
+
+	reporter, err := user.FirstByUsername(myInfo.Username)
 	if err != nil {
 		return nil, err
 	}
 
-	assignee, err := user.FirstByEmail(v.Assignee)
+	assignee, err := user.FirstByUsername(v.Assignee)
 	if err != nil {
 		return nil, err
 	}
