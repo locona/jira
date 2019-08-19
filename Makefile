@@ -74,3 +74,13 @@ user.list:
 user.show:
 	@go install
 	@jira user show
+
+.PHONY: github.auth
+github.auth:
+	@go install
+	@jira integration github auth
+
+.PHONY: github.pr
+github.pr:
+	@go install
+	@jira integration github pr

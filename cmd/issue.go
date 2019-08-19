@@ -5,8 +5,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// inputCmd represents the output command
-var inputCmd = &cobra.Command{
+// issueCmd represents the output command
+var issueCmd = &cobra.Command{
 	Use: "issue",
 }
 
@@ -17,7 +17,7 @@ func init() {
 	epicCmd := issue.NewCommandEpic()
 	deleteCmd := issue.NewCommandDelete()
 	statusCmd := issue.NewCommandStatus()
-	inputCmd.AddCommand(
+	issueCmd.AddCommand(
 		listCmd,
 		assignCmd,
 		applyCmd,
@@ -25,5 +25,5 @@ func init() {
 		deleteCmd,
 		statusCmd,
 	)
-	rootCmd.AddCommand(inputCmd)
+	rootCmd.AddCommand(issueCmd)
 }
