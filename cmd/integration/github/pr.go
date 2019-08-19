@@ -2,10 +2,14 @@ package github
 
 import (
 	"github.com/3-shake/jira/pkg/integration/github"
+	"github.com/3-shake/jira/pkg/issue"
 	ggithub "github.com/google/go-github/v27/github"
+	"github.com/k0kubun/pp"
 	"github.com/spf13/cobra"
 	"gopkg.in/AlecAivazis/survey.v1"
 )
+
+var labels = []string{"github-pr", "qa"}
 
 func NewCommandPullRequest() *cobra.Command {
 	cmd := &cobra.Command{
@@ -43,8 +47,8 @@ func PullRequest() error {
 	options := make([]string, 0)
 	mapOptionToPR := make(map[string]ggithub.PullRequest)
 	for _, pr := range pullrequests {
-		options = append(options, pr.Title)
-		mapOptionToPR[pr.Title] = &pr
+		options = append(options, *pr.Title)
+		mapOptionToPR[*pr.Title] = *pr
 	}
 
 	prPrompt := &survey.Select{
@@ -58,7 +62,23 @@ func PullRequest() error {
 	}
 
 	selectedPR := mapOptionToPR[prOption]
-	pp.Println(selectedPR)
+	commits, err := github.PullRequestCommits(*selectedPR.Number)
+
+	subtasks := make([]*issue.ApplyValue, 0)
+	for idx := range commits {
+		subtasks = append(subtasks, &issue.ApplyValue{
+			Summary: *commits[idx].Commit.Message,
+			Labels:  labels,
+		})
+	}
+
+	results, err := issue.Apply(&issue.ApplyValue{
+		Summary:  *selectedPR.Title,
+		Labels:   labels,
+		Subtasks: subtasks,
+	})
+
+	pp.Println(results, err)
 
 	return nil
 	// return prompt.Progress(&PullRequestCommand{

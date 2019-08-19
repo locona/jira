@@ -18,3 +18,15 @@ func PullRequests() ([]*github.PullRequest, error) {
 
 	return pullrequests, nil
 }
+
+func PullRequestCommits(number int) ([]*github.RepositoryCommit, error) {
+	ctx := context.Background()
+	cli := Client()
+	gc, err := gitconfig.Config()
+	commits, _, err := cli.PullRequests.ListCommits(ctx, gc.RemoteConfig.Organization, gc.RemoteConfig.Repository, number, nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return commits, nil
+}
