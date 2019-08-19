@@ -24,7 +24,7 @@ type ShowCommand struct {
 }
 
 func (cmd *ShowCommand) Request(s *spinner.Spinner) error {
-	user, err := user.FirstByEmail("miyamae@3-shake.com")
+	user, err := user.FirstByUsername("miyamae@3-shake.com")
 	if err != nil {
 		return err
 	}

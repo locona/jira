@@ -62,7 +62,7 @@ func Assign() error {
 		return errors.New("Required Select Issue")
 	}
 
-	selectedAssignee, err := selectAssignee()
+	selectedAssignee, err := SelectAssignee()
 	if err != nil {
 		return err
 	}
@@ -80,7 +80,7 @@ func Assign() error {
 	return nil
 }
 
-func selectAssignee() (*jira.User, error) {
+func SelectAssignee() (*jira.User, error) {
 	users, err := user.List()
 	if err != nil {
 		return nil, err

@@ -6,18 +6,18 @@ import (
 	"github.com/pkg/errors"
 )
 
-func FirstByEmail(email string) (*jira.User, error) {
+func FirstByUsername(username string) (*jira.User, error) {
 	cli, err := auth.Client()
 	if err != nil {
 		return nil, err
 	}
 
-	users, _, err := cli.User.Find(email)
+	users, _, err := cli.User.Find(username)
 	if err != nil {
 		return nil, err
 	}
 	if len(users) == 0 {
-		return nil, errors.Wrapf(err, "Email: %v", email)
+		return nil, errors.Wrapf(err, "Username: %v", username)
 	}
 
 	return &users[0], nil
