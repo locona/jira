@@ -1,0 +1,20 @@
+- type: "タスク"
+  labels:
+    - qa
+  key: "REC-821"
+  summary: "(DEMO) 親タスク 実装"
+  description: "(DEMO) サブタスク- v2 実装"
+  assignee: "miyamae@3-shake.com"
+  subtasks:
+  - type: "タスク"
+    labels:
+      - qa
+    summary: "(DEMO) サブタスク- v2 実装"
+    description: "(DEMO) サブタスク 実装"
+    assignee: "sasaki@3-shake.com"
+  - type: "タスク"
+    labels:
+      - qa
+    summary: "(DEMO) サブタスク- v2 実装"
+    description: "(DEMO) サブタスク- v2 実装"
+    assignee: "sasaki@3-shake.com"
