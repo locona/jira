@@ -1,6 +1,22 @@
 # jira
 
-## Install
+[Go](https://golang.org/) client library for [Atlassian JIRA](https://www.atlassian.com/software/jira).
+
+
+## Feature
+* Authentication (HTTP Basic).
+* Create/Delete Issue.
+* Batch Create/Delete Issue.
+* Update issue transitions
+* Update assignee.
+* Integration Github.
+
+## Requirements
+* Go 
+* Jira 
+
+
+## Installation
 ```
 go get -u github.com/3-shake/jira
 ```
