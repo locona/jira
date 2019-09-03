@@ -84,3 +84,15 @@ func List(op *Search) ([]jira.Issue, error) {
 
 	return issues, nil
 }
+
+func Options(issueList []jira.Issue) ([]string, map[string]jira.Issue) {
+	options := make([]string, 0)
+	mapOptionToIssue := make(map[string]jira.Issue)
+	for _, is := range issueList {
+		op := Label(is)
+		options = append(options, op)
+		mapOptionToIssue[op] = is
+	}
+
+	return options, mapOptionToIssue
+}

@@ -9,15 +9,29 @@ import (
 	"github.com/andygrunwald/go-jira"
 )
 
+const (
+	FieldSummary     = "summary"
+	FieldDescription = "description"
+	FieldEpic        = "epic"
+)
+
+var (
+	Fields = []string{
+		"summary",
+		"description",
+		"epic",
+	}
+)
+
 type ApplyValue struct {
-	Key         string `yaml:"key,omitempty"`
-	Summary     string `yaml:"summary,omitempty"`
-	Description string `yaml:"description,omitempty"`
-	// Epic        string   `yaml:"epic,omitempty"`
-	Labels   []string      `yaml:"labels,omitempty"`
-	Assignee string        `yaml:"assignee,omitempty"`
-	Type     string        `yaml:"issuetype,omitempty"`
-	Subtasks []*ApplyValue `yaml:"subtasks,omitempty"`
+	Key         string        `yaml:"key,omitempty"`
+	Summary     string        `yaml:"summary,omitempty"`
+	Description string        `yaml:"description,omitempty"`
+	Epic        string        `yaml:"epic,omitempty"`
+	Labels      []string      `yaml:"labels,omitempty"`
+	Assignee    string        `yaml:"assignee,omitempty"`
+	Type        string        `yaml:"issuetype,omitempty"`
+	Subtasks    []*ApplyValue `yaml:"subtasks,omitempty"`
 }
 
 func Apply(v *ApplyValue) ([]jira.Issue, error) {

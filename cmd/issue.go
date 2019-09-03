@@ -15,6 +15,7 @@ func init() {
 	assignCmd := issue.NewCommandAssign()
 	applyCmd := issue.NewCommandApply()
 	epicCmd := issue.NewCommandEpic()
+	updateCmd := issue.NewCommandUpdate()
 	deleteCmd := issue.NewCommandDelete()
 	statusCmd := issue.NewCommandStatus()
 	issueCmd.AddCommand(
@@ -22,6 +23,7 @@ func init() {
 		assignCmd,
 		applyCmd,
 		epicCmd,
+		updateCmd,
 		deleteCmd,
 		statusCmd,
 	)

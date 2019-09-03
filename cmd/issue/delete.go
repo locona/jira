@@ -53,14 +53,7 @@ func Delete(option *DeleteOption) error {
 		return err
 	}
 
-	options := make([]string, 0)
-	mapOptionToIssue := make(map[string]jira.Issue)
-	for _, is := range issueList {
-		op := issue.Label(is)
-		options = append(options, op)
-		mapOptionToIssue[op] = is
-	}
-
+	options, mapOptionToIssue := issue.Options(issueList)
 	deletePrompt := &survey.MultiSelect{
 		Message: "Select Delete ISSUE ID",
 		Options: options,
