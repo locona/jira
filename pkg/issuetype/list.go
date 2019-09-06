@@ -1,6 +1,6 @@
 package issuetype
 
-import "github.com/3-shake/jira/pkg/auth"
+import "github.com/locona/jira/pkg/auth"
 
 func List() {
 	cli, err := auth.Client()

@@ -13,7 +13,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-const baseurl = "https://3-shake.atlassian.net"
+const baseurl = "https://locona.atlassian.net"
 
 type Auth struct {
 	BaseURL  string `json:"base_url"`

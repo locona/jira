@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/3-shake/jira/pkg/prompt"
+	"github.com/locona/jira/pkg/prompt"
 	"github.com/andygrunwald/go-jira"
 )
 

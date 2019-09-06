@@ -1,10 +1,10 @@
 package github
 
 import (
-	cmdIssue "github.com/3-shake/jira/cmd/issue"
-	"github.com/3-shake/jira/pkg/integration/github"
-	"github.com/3-shake/jira/pkg/issue"
-	"github.com/3-shake/jira/pkg/prompt"
+	cmdIssue "github.com/locona/jira/cmd/issue"
+	"github.com/locona/jira/pkg/integration/github"
+	"github.com/locona/jira/pkg/issue"
+	"github.com/locona/jira/pkg/prompt"
 	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
 	ggithub "github.com/google/go-github/v27/github"

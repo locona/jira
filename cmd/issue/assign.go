@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/3-shake/jira/pkg/issue"
-	"github.com/3-shake/jira/pkg/prompt"
-	"github.com/3-shake/jira/pkg/user"
+	"github.com/locona/jira/pkg/issue"
+	"github.com/locona/jira/pkg/prompt"
+	"github.com/locona/jira/pkg/user"
 	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
 	"github.com/spf13/cobra"
@@ -33,7 +33,7 @@ type AssignCommand struct {
 func (cmd *AssignCommand) Request(s *spinner.Spinner) error {
 	label := issue.Label(*cmd.Issue)
 
-	suffixFormat := "%v : Status To `%v`"
+	suffixFormat := "%v : Assign To `%v`"
 	suffixMsg := fmt.Sprintf(suffixFormat, label, cmd.Assignee.EmailAddress)
 
 	var suf = make([]byte, 100)

@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/3-shake/jira/cmd/user"
+	"github.com/locona/jira/cmd/user"
 	"github.com/spf13/cobra"
 )
 

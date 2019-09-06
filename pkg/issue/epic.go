@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/3-shake/jira/pkg/auth"
-	"github.com/3-shake/jira/pkg/project"
+	"github.com/locona/jira/pkg/auth"
+	"github.com/locona/jira/pkg/project"
 	"github.com/andygrunwald/go-jira"
 )
 

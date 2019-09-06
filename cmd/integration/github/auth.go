@@ -1,7 +1,7 @@
 package github
 
 import (
-	"github.com/3-shake/jira/pkg/integration/github"
+	"github.com/locona/jira/pkg/integration/github"
 	"github.com/briandowns/spinner"
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"

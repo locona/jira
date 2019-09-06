@@ -1,8 +1,8 @@
 package project
 
 import (
-	"github.com/3-shake/jira/pkg/project"
-	"github.com/3-shake/jira/pkg/prompt"
+	"github.com/locona/jira/pkg/project"
+	"github.com/locona/jira/pkg/prompt"
 	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
 	"github.com/spf13/cobra"

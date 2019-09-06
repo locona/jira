@@ -1,7 +1,7 @@
 package integration
 
 import (
-	"github.com/3-shake/jira/cmd/integration/github"
+	"github.com/locona/jira/cmd/integration/github"
 	"github.com/spf13/cobra"
 )
 

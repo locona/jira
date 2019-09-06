@@ -1,7 +1,7 @@
 package project
 
 import (
-	"github.com/3-shake/jira/pkg/project"
+	"github.com/locona/jira/pkg/project"
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
 )

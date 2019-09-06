@@ -1,7 +1,7 @@
 package user
 
 import (
-	"github.com/3-shake/jira/pkg/auth"
+	"github.com/locona/jira/pkg/auth"
 	"github.com/andygrunwald/go-jira"
 	"github.com/pkg/errors"
 )

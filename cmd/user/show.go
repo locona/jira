@@ -1,8 +1,8 @@
 package user
 
 import (
-	"github.com/3-shake/jira/pkg/prompt"
-	"github.com/3-shake/jira/pkg/user"
+	"github.com/locona/jira/pkg/prompt"
+	"github.com/locona/jira/pkg/user"
 	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
 	"github.com/k0kubun/pp"
@@ -24,7 +24,7 @@ type ShowCommand struct {
 }
 
 func (cmd *ShowCommand) Request(s *spinner.Spinner) error {
-	user, err := user.FirstByUsername("miyamae@3-shake.com")
+	user, err := user.FirstByUsername("miyamae@locona.com")
 	if err != nil {
 		return err
 	}

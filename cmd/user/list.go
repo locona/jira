@@ -1,8 +1,8 @@
 package user
 
 import (
-	"github.com/3-shake/jira/pkg/prompt"
-	"github.com/3-shake/jira/pkg/user"
+	"github.com/locona/jira/pkg/prompt"
+	"github.com/locona/jira/pkg/user"
 	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
 	"github.com/spf13/cobra"

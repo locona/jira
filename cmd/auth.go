@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/3-shake/jira/cmd/project"
-	"github.com/3-shake/jira/pkg/auth"
+	"github.com/locona/jira/cmd/project"
+	"github.com/locona/jira/pkg/auth"
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
 )

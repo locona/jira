@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/3-shake/jira/pkg/status"
+	"github.com/locona/jira/pkg/status"
 	"github.com/k0kubun/pp"
 	"github.com/spf13/cobra"
 )

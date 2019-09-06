@@ -3,7 +3,7 @@ package github
 import (
 	"context"
 
-	"github.com/3-shake/jira/pkg/gitconfig"
+	"github.com/locona/jira/pkg/gitconfig"
 	"github.com/google/go-github/v27/github"
 )
 

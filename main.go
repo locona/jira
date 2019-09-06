@@ -1,6 +1,6 @@
 package main
 
-import "github.com/3-shake/jira/cmd"
+import "github.com/locona/jira/cmd"
 
 func main() {
 	cmd.Execute()
