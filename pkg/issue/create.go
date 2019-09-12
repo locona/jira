@@ -1,12 +1,16 @@
 package issue
 
 import (
+	"fmt"
+	"io/ioutil"
 	"log"
+	"net/http"
 
+	"github.com/andygrunwald/go-jira"
 	"github.com/locona/jira/pkg/auth"
+	"github.com/locona/jira/pkg/issuetype"
 	"github.com/locona/jira/pkg/project"
 	"github.com/locona/jira/pkg/user"
-	"github.com/andygrunwald/go-jira"
 )
 
 const (
@@ -30,7 +34,7 @@ type ApplyValue struct {
 	Epic        string        `yaml:"epic,omitempty"`
 	Labels      []string      `yaml:"labels,omitempty"`
 	Assignee    string        `yaml:"assignee,omitempty"`
-	Type        string        `yaml:"issuetype,omitempty"`
+	Type        string        `yaml:"type,omitempty"`
 	Subtasks    []*ApplyValue `yaml:"subtasks,omitempty"`
 }
 
@@ -61,7 +65,7 @@ func Apply(v *ApplyValue) ([]jira.Issue, error) {
 			Assignee:    assignee,
 			Reporter:    reporter,
 			Type: jira.IssueType{
-				ID: "10033",
+				ID: issuetype.IssueType(current, v.Type),
 			},
 			Project: jira.Project{
 				Key: current,
@@ -85,7 +89,7 @@ func Apply(v *ApplyValue) ([]jira.Issue, error) {
 				Assignee:    assignee,
 				Reporter:    reporter,
 				Type: jira.IssueType{
-					ID: "10058",
+					ID: issuetype.IssueType(current, v.Subtasks[idx].Type),
 				},
 				Project: jira.Project{
 					Key: current,
@@ -126,7 +130,12 @@ func Create(issue *jira.Issue) (*jira.Issue, error) {
 		return nil, err
 	}
 
-	created, _, err := cli.Issue.Create(issue)
+	created, resp, err := cli.Issue.Create(issue)
+	if resp.StatusCode >= http.StatusBadRequest {
+		b, _ := ioutil.ReadAll(resp.Body)
+		log.Println(string(b))
+		return nil, err
+	}
 	if err != nil {
 		return nil, err
 	}
@@ -145,7 +154,13 @@ func Update(issue *jira.Issue) (*jira.Issue, error) {
 		return nil, err
 	}
 
-	updated, _, err := cli.Issue.Update(issue)
+	updated, resp, err := cli.Issue.Update(issue)
+	if resp.StatusCode >= http.StatusBadRequest {
+		b, _ := ioutil.ReadAll(resp.Body)
+		fmt.Println(string(b))
+		return nil, err
+	}
+
 	if err != nil {
 		return nil, err
 	}

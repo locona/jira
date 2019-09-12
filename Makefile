@@ -63,7 +63,7 @@ issue.assign:
 .PHONY: issue.apply
 issue.apply:
 	@go install
-	@jira issue apply -f examples/issue_create.yaml
+	@jira issue apply -f examples/reckoner.yaml
 
 .PHONY: user.list
 user.list:

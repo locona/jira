@@ -1,8 +1,8 @@
 package project
 
 import (
-	"github.com/locona/jira/pkg/auth"
 	"github.com/andygrunwald/go-jira"
+	"github.com/locona/jira/pkg/auth"
 )
 
 func Show() (*jira.Project, error) {

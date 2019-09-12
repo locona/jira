@@ -7,6 +7,7 @@ require (
 	github.com/briandowns/spinner v1.6.1
 	github.com/dlclark/regexp2 v1.2.0
 	github.com/google/go-github/v27 v27.0.6
+	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
 	github.com/k0kubun/pp v3.0.1+incompatible
 	github.com/manifoldco/promptui v0.3.2
 	github.com/mattn/go-runewidth v0.0.4 // indirect
