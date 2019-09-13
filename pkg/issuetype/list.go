@@ -1,7 +1,5 @@
 package issuetype
 
-import "github.com/k0kubun/pp"
-
 const (
 	AD  = "AD"
 	REC = "REC"
@@ -54,6 +52,5 @@ var ISSUE_TYPE = map[string]map[string]string{
 }
 
 func IssueType(projectID string, _type string) string {
-	pp.Println(_type, ISSUE_TYPE[projectID])
 	return ISSUE_TYPE[projectID][_type]
 }
