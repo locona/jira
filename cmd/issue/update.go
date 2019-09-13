@@ -1,10 +1,10 @@
 package issue
 
 import (
-	"github.com/locona/jira/pkg/issue"
-	"github.com/locona/jira/pkg/prompt"
 	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
+	"github.com/locona/jira/pkg/issue"
+	"github.com/locona/jira/pkg/prompt"
 	"github.com/spf13/cobra"
 	survey "gopkg.in/AlecAivazis/survey.v1"
 )
@@ -66,9 +66,7 @@ func Update() error {
 }
 
 func selectIssue() (*jira.Issue, error) {
-	issueList, err := issue.List(&issue.Search{
-		Assignee: "own",
-	})
+	issueList, err := issue.List(&issue.Search{})
 	if err != nil {
 		return nil, err
 	}
