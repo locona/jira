@@ -18,7 +18,7 @@
 
 ## Installation
 ```
-go get -u github.com/3-shake/jira
+go get -u github.com/locona/jira
 ```
 
 ## DEMO Issue Create
