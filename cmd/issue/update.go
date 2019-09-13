@@ -1,12 +1,12 @@
 package issue
 
 import (
+	"github.com/AlecAivazis/survey/v2"
 	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
 	"github.com/locona/jira/pkg/issue"
 	"github.com/locona/jira/pkg/prompt"
 	"github.com/spf13/cobra"
-	survey "gopkg.in/AlecAivazis/survey.v1"
 )
 
 func NewCommandUpdate() *cobra.Command {

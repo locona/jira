@@ -1,9 +1,9 @@
 package issue
 
 import (
+	survey "github.com/AlecAivazis/survey/v2"
 	"github.com/andygrunwald/go-jira"
 	"github.com/locona/jira/pkg/issue"
-	survey "gopkg.in/AlecAivazis/survey.v1"
 )
 
 func multiSelectIssue(msg string) ([]*jira.Issue, error) {

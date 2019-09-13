@@ -7,6 +7,10 @@ import (
 )
 
 func Label(i jira.Issue) string {
-	format := "%v: %v (%v)"
-	return fmt.Sprintf(format, i.Key, i.Fields.Summary, i.Fields.Status.Name)
+	assignee := "Undefined"
+	if i.Fields.Assignee != nil {
+		assignee = i.Fields.Assignee.Name
+	}
+	format := "%v(%v:%v): %v"
+	return fmt.Sprintf(format, i.Key, assignee, i.Fields.Status.Name, i.Fields.Summary)
 }

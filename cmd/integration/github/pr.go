@@ -1,15 +1,15 @@
 package github
 
 import (
+	"github.com/AlecAivazis/survey/v2"
+	"github.com/andygrunwald/go-jira"
+	"github.com/briandowns/spinner"
+	ggithub "github.com/google/go-github/v27/github"
 	cmdIssue "github.com/locona/jira/cmd/issue"
 	"github.com/locona/jira/pkg/integration/github"
 	"github.com/locona/jira/pkg/issue"
 	"github.com/locona/jira/pkg/prompt"
-	"github.com/andygrunwald/go-jira"
-	"github.com/briandowns/spinner"
-	ggithub "github.com/google/go-github/v27/github"
 	"github.com/spf13/cobra"
-	"gopkg.in/AlecAivazis/survey.v1"
 )
 
 var labels = []string{"github-pr", "qa"}

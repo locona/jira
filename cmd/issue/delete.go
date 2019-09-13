@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/locona/jira/pkg/issue"
-	"github.com/locona/jira/pkg/prompt"
+	"github.com/AlecAivazis/survey/v2"
 	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
+	"github.com/locona/jira/pkg/issue"
+	"github.com/locona/jira/pkg/prompt"
 	"github.com/spf13/cobra"
-	survey "gopkg.in/AlecAivazis/survey.v1"
 )
 
 type DeleteOption struct {

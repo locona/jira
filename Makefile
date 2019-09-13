@@ -20,6 +20,11 @@ issue.list:
 	@go install
 	@jira issue list --summary="rdap-"
 
+.PHONY: issue.status
+issue.status:
+	@go install
+	@jira issue status
+
 .PHONY: issue.delete
 issue.delete:
 	@go install

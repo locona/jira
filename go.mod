@@ -3,6 +3,7 @@ module github.com/locona/jira
 go 1.12
 
 require (
+	github.com/AlecAivazis/survey/v2 v2.0.4
 	github.com/andygrunwald/go-jira v1.10.0
 	github.com/briandowns/spinner v1.6.1
 	github.com/dlclark/regexp2 v1.2.0
