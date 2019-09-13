@@ -28,13 +28,13 @@ var (
 )
 
 type ApplyValue struct {
+	Type        string        `yaml:"type,omitempty"`
 	Key         string        `yaml:"key,omitempty"`
+	Labels      []string      `yaml:"labels,omitempty"`
 	Summary     string        `yaml:"summary,omitempty"`
 	Description string        `yaml:"description,omitempty"`
 	Epic        string        `yaml:"epic,omitempty"`
-	Labels      []string      `yaml:"labels,omitempty"`
 	Assignee    string        `yaml:"assignee,omitempty"`
-	Type        string        `yaml:"type,omitempty"`
 	Subtasks    []*ApplyValue `yaml:"subtasks,omitempty"`
 }
 

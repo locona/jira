@@ -12,6 +12,7 @@ var issueCmd = &cobra.Command{
 
 func init() {
 	listCmd := issue.NewCommandList()
+	exportCmd := issue.NewCommandExport()
 	assignCmd := issue.NewCommandAssign()
 	applyCmd := issue.NewCommandApply()
 	epicCmd := issue.NewCommandEpic()
@@ -20,6 +21,7 @@ func init() {
 	statusCmd := issue.NewCommandStatus()
 	issueCmd.AddCommand(
 		listCmd,
+		exportCmd,
 		assignCmd,
 		applyCmd,
 		epicCmd,
