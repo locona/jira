@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/andygrunwald/go-jira"
 	"github.com/locona/jira/pkg/auth"
 	"github.com/locona/jira/pkg/project"
-	"github.com/andygrunwald/go-jira"
 )
 
 type Search struct {
@@ -50,6 +50,9 @@ func List(op *Search) ([]jira.Issue, error) {
 
 	if op.Status != "" {
 		jqlList = append(jqlList, fmt.Sprintf("status = %v", op.Status))
+	} else {
+		// Ignore Status = DONE
+		jqlList = append(jqlList, fmt.Sprintf("status != %v", "DONE"))
 	}
 
 	if len(op.Labels) > 0 {
