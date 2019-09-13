@@ -1,8 +1,8 @@
 package issue
 
 import (
-	"github.com/locona/jira/pkg/issue"
 	"github.com/andygrunwald/go-jira"
+	"github.com/locona/jira/pkg/issue"
 	survey "gopkg.in/AlecAivazis/survey.v1"
 )
 
