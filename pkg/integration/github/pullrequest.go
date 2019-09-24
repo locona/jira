@@ -3,15 +3,22 @@ package github
 import (
 	"context"
 
-	"github.com/locona/jira/pkg/gitconfig"
 	"github.com/google/go-github/v27/github"
+	"github.com/locona/jira/pkg/gitconfig"
 )
 
-func PullRequests() ([]*github.PullRequest, error) {
+func PullRequests(state string) ([]*github.PullRequest, error) {
 	ctx := context.Background()
 	cli := Client()
 	gc, err := gitconfig.Config()
-	pullrequests, _, err := cli.PullRequests.List(ctx, gc.RemoteConfig.Organization, gc.RemoteConfig.Repository, nil)
+	pullrequests, _, err := cli.PullRequests.List(
+		ctx,
+		gc.RemoteConfig.Organization,
+		gc.RemoteConfig.Repository,
+		&github.PullRequestListOptions{
+			State: state,
+		},
+	)
 	if err != nil {
 		return nil, err
 	}

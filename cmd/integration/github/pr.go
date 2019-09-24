@@ -1,27 +1,38 @@
 package github
 
 import (
+	"strings"
+
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/andygrunwald/go-jira"
 	"github.com/briandowns/spinner"
 	ggithub "github.com/google/go-github/v27/github"
+	"github.com/spf13/cobra"
+
 	cmdIssue "github.com/locona/jira/cmd/issue"
 	"github.com/locona/jira/pkg/integration/github"
 	"github.com/locona/jira/pkg/issue"
+	"github.com/locona/jira/pkg/issuetype"
 	"github.com/locona/jira/pkg/prompt"
-	"github.com/spf13/cobra"
 )
 
 var labels = []string{"github-pr", "qa"}
 
+type PullRequestOption struct {
+	State string
+}
+
 func NewCommandPullRequest() *cobra.Command {
+	pullRequestOption := &PullRequestOption{}
+
 	cmd := &cobra.Command{
 		Use: "pr",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return PullRequest()
+			return PullRequest(pullRequestOption)
 		},
 	}
 
+	cmd.Flags().StringVarP(&pullRequestOption.State, "state", "s", "open", "Interactive.")
 	return cmd
 }
 
@@ -45,8 +56,8 @@ func (cmd *PullRequestCommand) Response() error {
 	return nil
 }
 
-func PullRequest() error {
-	pullrequests, err := github.PullRequests()
+func PullRequest(op *PullRequestOption) error {
+	pullrequests, err := github.PullRequests(op.State)
 
 	options := make([]string, 0)
 	mapOptionToPR := make(map[string]ggithub.PullRequest)
@@ -66,10 +77,13 @@ func PullRequest() error {
 	}
 
 	selectedPR := mapOptionToPR[prOption]
-	commits, err := github.PullRequestCommits(*selectedPR.Number)
-	if err != nil {
-		return err
-	}
+	commits := strings.Split(*selectedPR.Body, "\r\n")
+
+	// TOOD: USE OPTION
+	// commits, err := github.PullRequestCommits(*selectedPR.Number)
+	// if err != nil {
+	// return err
+	// }
 
 	assignee, err := cmdIssue.SelectAssignee()
 	if err != nil {
@@ -79,13 +93,16 @@ func PullRequest() error {
 	subtasks := make([]*issue.ApplyValue, 0)
 	for idx := range commits {
 		subtasks = append(subtasks, &issue.ApplyValue{
-			Summary:  *commits[idx].Commit.Message,
+			Type:    issuetype.SUBTASK,
+			Summary: commits[idx],
+			// Describe: TOOD link of issue url.
 			Assignee: assignee.Name,
 			Labels:   labels,
 		})
 	}
 	return prompt.Progress(&PullRequestCommand{
 		Value: &issue.ApplyValue{
+			Type:     issuetype.TASK,
 			Summary:  *selectedPR.Title,
 			Labels:   labels,
 			Assignee: assignee.Name,
