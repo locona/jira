@@ -13,8 +13,6 @@ import (
 	"github.com/pkg/errors"
 )
 
-const baseurl = "https://locona.atlassian.net"
-
 type Auth struct {
 	BaseURL  string `json:"base_url"`
 	Username string `json:"username"`
@@ -94,9 +92,9 @@ func Client() (*jira.Client, error) {
 	return cli, nil
 }
 
-func Authenticate(username, password string) (*Auth, error) {
+func Authenticate(baseURL, username, password string) (*Auth, error) {
 	auth := &Auth{
-		BaseURL:  baseurl,
+		BaseURL:  baseURL,
 		Username: username,
 		Password: password,
 	}

@@ -20,6 +20,14 @@ func init() {
 }
 
 func Auth() error {
+	promptBaseURL := promptui.Prompt{
+		Label: "BaseURL",
+	}
+	baseURL, err := promptBaseURL.Run()
+	if err != nil {
+		return err
+	}
+
 	promptUsername := promptui.Prompt{
 		Label: "User Name",
 	}
@@ -37,7 +45,7 @@ func Auth() error {
 		return err
 	}
 
-	_auth, err := auth.Authenticate(username, password)
+	_auth, err := auth.Authenticate(baseURL, username, password)
 	if err != nil {
 		return err
 	}
