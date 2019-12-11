@@ -1,10 +1,14 @@
 {
   "branch": "master",
   "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/github",
-      "@semantic-release/git"
+    ["@semantic-release/commit-analyzer", {
+      "preset": "angular",
+      "releaseRules": ".release-rules.js"
+    }],
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/git"
   ]
 }
