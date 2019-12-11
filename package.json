@@ -6,9 +6,6 @@
   "directories": {
     "example": "examples"
   },
-  "dependencies": {
-    "semantic-release": "^15.13.31"
-  },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.6",
     "@semantic-release/exec": "^3.3.8",
