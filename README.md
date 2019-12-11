@@ -1,6 +1,6 @@
-# jira
+# jira cli tool.
 
-jira is a simple command line interface based on the jira module. 
+jira is a simple command line interface based on the jira module.
 The module uses the REST API to communicate with the Jira instance.
 
 [Go](https://golang.org/) client library for [Atlassian JIRA](https://www.atlassian.com/software/jira).
@@ -15,8 +15,8 @@ The module uses the REST API to communicate with the Jira instance.
 * Integration Github.
 
 ## Requirements
-* Go 
-* Jira 
+* Go
+* Jira
 
 
 ## Installation
