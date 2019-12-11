@@ -3,7 +3,7 @@
   "plugins": [
     ["@semantic-release/commit-analyzer", {
       "preset": "angular",
-      "releaseRules": ".release-rules.js"
+      "releaseRules": "./release-rules.js"
     }],
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
