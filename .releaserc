@@ -2,7 +2,7 @@
   "branch": "master",
   "plugins": [
     ["@semantic-release/commit-analyzer", {
-      "preset": "angular",
+      "preset": "conventionalcommits",
       "releaseRules": [
           {breaking: true, release: 'major'},
           {revert: true, release: 'patch'},
