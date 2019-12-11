@@ -1,18 +1,22 @@
-release:
-  <<: *defaults
-  steps:
-    - checkout
-    - run: npm ci
-    - run: npx semantic-release
+version: 2
+
+defaults: &defaults
+  working_directory: ~/app
+  docker:
+    - image: circleci/node:12
+
+jobs:
+  release:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: npx semantic-release
 
 workflows:
   version: 2
   test_and_release:
     jobs:
-      - test
       - release:
-          requires:
-            - test
           filters:
             branches:
               only: master
