@@ -4,6 +4,17 @@
     ["@semantic-release/commit-analyzer", {
       "preset": "angular",
       "releaseRules": "./release-rules.js"
+      "presetConfig": {
+        "types": [
+          {"type": "feat", "section": "New Features"},
+          {"type": "fix", "section": "Bug Fixes"},
+          {"type": "fix", "section": "Improvement"},
+          {"type": "docs", "section": "Docs"},
+          {"type": "refactor", "section": "Refactor"},
+          {"type": "perf", "section": "Performance"},
+          {"type": "chore", "section": "Other"},
+        ]
+      }
     }],
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",

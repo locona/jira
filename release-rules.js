@@ -7,5 +7,5 @@ module.exports = [
   {type: 'improvement', release: 'patch'},
   {type: 'docs', release: 'patch'},
   {type: 'refactor', release: 'patch'},
-  {type: 'ci', release: 'patch'}
+  {type: 'chore', release: 'patch'},
 ];

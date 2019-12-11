@@ -1,11 +1,8 @@
 types:
   - feat
   - fix
+  - improvement
   - docs
-  - style
   - refactor
   - perf
-  - test
-  - build
-  - ci
-  - revert
+  - chore
