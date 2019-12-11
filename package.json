@@ -1,0 +1,38 @@
+{
+  "name": "jira",
+  "version": "0.0.0-development",
+  "description": "jira is a simple command line interface based on the jira module.  The module uses the REST API to communicate with the Jira instance.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "semantic-release": "^15.13.31"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^3.0.6",
+    "@semantic-release/exec": "^3.3.8",
+    "@semantic-release/git": "^7.0.18",
+    "cz-conventional-changelog": "3.0.2",
+    "semantic-release": "^15.13.31"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/locona/jira.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/locona/jira/issues"
+  },
+  "homepage": "https://github.com/locona/jira#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
