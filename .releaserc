@@ -3,12 +3,22 @@
   "plugins": [
     ["@semantic-release/commit-analyzer", {
       "preset": "angular",
-      "releaseRules": "./release-rules.js",
+      "releaseRules": [
+          {breaking: true, release: 'major'},
+          {revert: true, release: 'patch'},
+          {type: 'feat', release: 'minor'},
+          {type: 'fix', release: 'patch'},
+          {type: 'improvement', release: 'patch'},
+          {type: 'docs', release: 'patch'},
+          {type: 'perf', release: 'patch'},
+          {type: 'refactor', release: 'patch'},
+          {type: 'chore', release: 'patch'}
+      ],
       "presetConfig": {
         "types": [
           {"type": "feat", "section": "New Features"},
           {"type": "fix", "section": "Bug Fixes"},
-          {"type": "fix", "section": "Improvement"},
+          {"type": "improvement", "section": "Improvement"},
           {"type": "docs", "section": "Docs"},
           {"type": "refactor", "section": "Refactor"},
           {"type": "perf", "section": "Performance"},
