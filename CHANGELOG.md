@@ -4,6 +4,23 @@
 ### Other
 
 * fix ([f07b011](https://github.com/locona/jira/commit/f07b0117059f0b7fb3f6c99e6a77f9daa852e505))
+* **release:** 1.1.0 [skip ci] ([4072631](https://github.com/locona/jira/commit/40726319da9a15cd48a0f61344f6a6d4abd1f7df))
+* **release:** 1.1.0 [skip ci] ([ab9e98e](https://github.com/locona/jira/commit/ab9e98e41f24f7a326e806f57893887ec2bf22cc))
+* test chore ([ca0c9c4](https://github.com/locona/jira/commit/ca0c9c430c24139a982fd09a38b6d6434335153f))
+* test chore ([e92148a](https://github.com/locona/jira/commit/e92148a56d65e22b958f335418928cdb6cb5f1af))
+* update configuration ([db4a058](https://github.com/locona/jira/commit/db4a0586ed9224d260e71cefc1153b066dc92778))
+
+
+### New Features
+
+* test ([04482b3](https://github.com/locona/jira/commit/04482b3f30f1e9d7ecd16993585fba01dda74150))
+
+## [1.1.0](https://github.com/locona/jira/compare/v1.0.8...v1.1.0) (2019-12-11)
+
+
+### Other
+
+* fix ([f07b011](https://github.com/locona/jira/commit/f07b0117059f0b7fb3f6c99e6a77f9daa852e505))
 * **release:** 1.1.0 [skip ci] ([ab9e98e](https://github.com/locona/jira/commit/ab9e98e41f24f7a326e806f57893887ec2bf22cc))
 * test chore ([e92148a](https://github.com/locona/jira/commit/e92148a56d65e22b958f335418928cdb6cb5f1af))
 * update configuration ([db4a058](https://github.com/locona/jira/commit/db4a0586ed9224d260e71cefc1153b066dc92778))
