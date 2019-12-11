@@ -3,7 +3,7 @@
   "plugins": [
     ["@semantic-release/commit-analyzer", {
       "preset": "angular",
-      "releaseRules": "./release-rules.js"
+      "releaseRules": "./release-rules.js",
       "presetConfig": {
         "types": [
           {"type": "feat", "section": "New Features"},
@@ -12,7 +12,7 @@
           {"type": "docs", "section": "Docs"},
           {"type": "refactor", "section": "Refactor"},
           {"type": "perf", "section": "Performance"},
-          {"type": "chore", "section": "Other"},
+          {"type": "chore", "section": "Other"}
         ]
       }
     }],
