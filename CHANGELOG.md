@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/locona/jira/compare/v1.0.2...v1.0.3) (2019-12-11)
+
+
+### Bug Fixes
+
+* ignore chore ([a53e2e7](https://github.com/locona/jira/commit/a53e2e725c06256c1d5b0e1a86fd4043116de967))
+
 ## [1.0.2](https://github.com/locona/jira/compare/v1.0.1...v1.0.2) (2019-12-11)
 
 ## [1.0.1](https://github.com/locona/jira/compare/v1.0.0...v1.0.1) (2019-12-11)
