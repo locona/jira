@@ -10,8 +10,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run: npm ci
-      - run: npx semantic-release
+      - run: npx semantic-release --no-ci
 
 workflows:
   version: 2
