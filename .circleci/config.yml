@@ -37,8 +37,8 @@ workflows:
       - release_dry:
           filters:
             branches:
-              ignore: master
+              only: /^release.*/
       - release:
           filters:
             branches:
-              only: master
+              only: /^release.*/
