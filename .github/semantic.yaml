@@ -3,6 +3,5 @@ types:
   - fix
   - improvement
   - docs
-  - refactor
   - perf
-  - chore
+  - refactor

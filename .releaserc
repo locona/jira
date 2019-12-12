@@ -12,7 +12,6 @@
           {type: 'docs', release: 'patch'},
           {type: 'perf', release: 'patch'},
           {type: 'refactor', release: 'patch'},
-          {type: 'chore', release: 'patch'}
       ],
       "presetConfig": {
         "types": [
@@ -20,9 +19,8 @@
           {"type": "fix", "section": "Bug Fixes", "hidden": false},
           {"type": "improvement", "section": "Improvement", "hidden": false},
           {"type": "docs", "section": "Docs", "hidden": false},
-          {"type": "refactor", "section": "Refactor", "hidden": false},
           {"type": "perf", "section": "Performance", "hidden": false},
-          {"type": "chore", "section": "Other", "hidden": false}
+          {"type": "refactor", "section": "Refactor", "hidden": false}
         ]
       }
     }],
@@ -36,8 +34,7 @@
           {type: 'improvement', release: 'patch'},
           {type: 'docs', release: 'patch'},
           {type: 'perf', release: 'patch'},
-          {type: 'refactor', release: 'patch'},
-          {type: 'chore', release: 'patch'}
+          {type: 'refactor', release: 'patch'}
       ],
       "presetConfig": {
         "types": [
@@ -46,8 +43,7 @@
           {"type": "improvement", "section": "Improvement", "hidden": false},
           {"type": "docs", "section": "Docs", "hidden": false},
           {"type": "refactor", "section": "Refactor", "hidden": false},
-          {"type": "perf", "section": "Performance", "hidden": false},
-          {"type": "chore", "section": "Other", "hidden": false}
+          {"type": "perf", "section": "Performance", "hidden": false}
         ]
       }
     }],
