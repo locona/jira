@@ -11,7 +11,7 @@
     "@semantic-release/exec": "^3.3.8",
     "@semantic-release/git": "^7.0.18",
     "cz-conventional-changelog": "3.0.2",
-    "semantic-release": "^15.13.31"
+    "semantic-release": "^v16.0.0-beta.45"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
