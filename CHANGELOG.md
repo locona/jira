@@ -1,3 +1,10 @@
+### [1.1.12](https://github.com/locona/jira/compare/v1.1.11...v1.1.12) (2019-12-16)
+
+
+### Improvement
+
+* add ([daff3e0](https://github.com/locona/jira/commit/daff3e0f227c8cdfb9c7eab15d0a704b0341a67a))
+
 ### [1.1.11](https://github.com/locona/jira/compare/v1.1.10...v1.1.11) (2019-12-16)
 
 
