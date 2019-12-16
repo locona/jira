@@ -1,3 +1,10 @@
+### [1.1.15](https://github.com/locona/jira/compare/v1.1.14...v1.1.15) (2019-12-16)
+
+
+### Bug Fixes
+
+* test ([adf4bb9](https://github.com/locona/jira/commit/adf4bb984d63aa2522c0cb0296119e0641e20199))
+
 ### [1.1.14](https://github.com/locona/jira/compare/v1.1.13...v1.1.14) (2019-12-16)
 
 
