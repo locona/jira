@@ -1,3 +1,10 @@
+### [1.1.13](https://github.com/locona/jira/compare/v1.1.12...v1.1.13) (2019-12-16)
+
+
+### Bug Fixes
+
+* **circleci:** use no-ci ([b885cf3](https://github.com/locona/jira/commit/b885cf3168cdc88b8b8bd383425c6a6ca107c483))
+
 ### [1.1.12](https://github.com/locona/jira/compare/v1.1.11...v1.1.12) (2019-12-16)
 
 
