@@ -1,3 +1,10 @@
+### [1.1.3](https://github.com/locona/jira/compare/v1.1.2...v1.1.3) (2019-12-16)
+
+
+### Improvement
+
+* **semantic-release:** update ([4861cf3](https://github.com/locona/jira/commit/4861cf3e9184cae71f19247cf890ba463d0e5602))
+
 ### [1.1.2](https://github.com/locona/jira/compare/v1.1.1...v1.1.2) (2019-12-16)
 
 
