@@ -1,10 +1,10 @@
 {
-  "branches": [{"name": "release/M*",prerelease: false}],
+  "branches": [{"name": "release/M*", "prerelease": false}],
   "plugins": [
     ["@semantic-release/commit-analyzer", {
       "preset": "conventionalcommits",
       "releaseRules": [
-          {type: 'improvement', release: 'patch'},
+          {"type": "improvement", "release": "patch"},
       ],
       "presetConfig": {
         "types": [
@@ -15,7 +15,7 @@
     ["@semantic-release/release-notes-generator", {
       "preset": "conventionalcommits",
       "releaseRules": [
-          {type: 'improvement', release: 'patch'},
+          {"type": "improvement", "release": "patch"},
       ],
       "presetConfig": {
         "types": [
