@@ -9,11 +9,13 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - run: npm i
       - run: npx semantic-release --dry-run
   release:
     <<: *defaults
     steps:
       - checkout
+      - run: npm i
       - run: npx semantic-release --debug
 
 workflows:
