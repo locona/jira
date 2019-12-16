@@ -1,3 +1,10 @@
+### [1.1.16](https://github.com/locona/jira/compare/v1.1.15...v1.1.16) (2019-12-16)
+
+
+### Bug Fixes
+
+* release 1.1.16 ([18a8146](https://github.com/locona/jira/commit/18a81462aa54085cff038b0f66d851c71c9e1605))
+
 ### [1.1.15](https://github.com/locona/jira/compare/v1.1.14...v1.1.15) (2019-12-16)
 
 
