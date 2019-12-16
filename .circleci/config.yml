@@ -28,7 +28,7 @@ jobs:
             - dependency-cache-{{ .Branch }}-{{ checksum "package.json" }}
             - dependency-cache-{{ .Branch }}-
       - run: npm ci
-      - run: npx semantic-release
+      - run: npx semantic-release --debug
 
 workflows:
   version: 2
