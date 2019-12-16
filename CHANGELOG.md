@@ -1,3 +1,15 @@
+### [1.1.14](https://github.com/locona/jira/compare/v1.1.13...v1.1.14) (2019-12-16)
+
+
+### Bug Fixes
+
+* **circleci:** fix ([16fd53b](https://github.com/locona/jira/commit/16fd53be2498361b96ddec80e97216e8aaada6cc))
+
+
+### Improvement
+
+* **circleci:** update ([01a7ae9](https://github.com/locona/jira/commit/01a7ae9e59b4af7b048d47740f277fb97bd9dc7a))
+
 ### [1.1.13](https://github.com/locona/jira/compare/v1.1.12...v1.1.13) (2019-12-16)
 
 
