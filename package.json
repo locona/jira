@@ -9,7 +9,7 @@
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.6",
     "@semantic-release/exec": "^3.3.8",
-    "@semantic-release/git": "^7.0.18",
+    "@semantic-release/git": "^v7.1.0-beta.10",
     "cz-conventional-changelog": "3.0.2",
     "semantic-release": "^v16.0.0-beta.45"
   },
@@ -33,6 +33,7 @@
     }
   },
   "dependencies": {
-    "conventional-changelog": "^3.1.15"
+    "conventional-changelog": "^3.1.15",
+    "micromatch": "^4.0.2"
   }
 }
