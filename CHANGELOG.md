@@ -1,3 +1,10 @@
+### [1.2.4](https://github.com/locona/jira/compare/v1.2.3...v1.2.4) (2019-12-17)
+
+
+### Bug Fixes
+
+* fix ([e5c97cc](https://github.com/locona/jira/commit/e5c97ccfef11d814f051a98f6976237e07ac520a))
+
 ### [1.2.3](https://github.com/locona/jira/compare/v1.2.2...v1.2.3) (2019-12-17)
 
 
