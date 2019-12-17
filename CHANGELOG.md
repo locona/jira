@@ -1,3 +1,33 @@
+## [1.2.0](https://github.com/locona/jira/compare/v1.1.16...v1.2.0) (2019-12-17)
+
+
+### Bug Fixes
+
+* release 1.1.16 ([b56863e](https://github.com/locona/jira/commit/b56863e36614a243d3268efbbdec4dae9026730b))
+* test ([34df31f](https://github.com/locona/jira/commit/34df31fe8c3c8582d040c6764e581b1eeb47e834))
+* test squash and merge ([#22](https://github.com/locona/jira/issues/22)) ([8b6d1d2](https://github.com/locona/jira/commit/8b6d1d2483dc5dc62c3da93bef30ba286fd7da66))
+* **channel:** update ([3c611a0](https://github.com/locona/jira/commit/3c611a0e96a652abcf014a470cb7752a4188f9ac))
+* **circleci:** fix ([751bbf0](https://github.com/locona/jira/commit/751bbf0664ac54fbd926098bfd4d4b571826325a))
+* **circleci:** use no-ci ([c6a8f04](https://github.com/locona/jira/commit/c6a8f04447004e833773d06429186a0d23e18a35))
+* **semantic-release:** bugfix ([697e3b7](https://github.com/locona/jira/commit/697e3b7413ca62ff77bef0b80dcf07daca2defd6))
+* **semantic-release:** fix ([a5f1675](https://github.com/locona/jira/commit/a5f1675f99d9c3a80daa520adbb51a4b93ce14f1))
+* **semantic-release:** update ([69f34ec](https://github.com/locona/jira/commit/69f34eca4a1f7356475da1d4f4a6e9b334fed82c))
+* **semantic-release:** update configuration ([5fde197](https://github.com/locona/jira/commit/5fde1975c0f847d4c6fd4a39a0c6e5000687e56f))
+
+
+### Improvement
+
+* add ([2063ad2](https://github.com/locona/jira/commit/2063ad28848a0780cb1912e83ce06b87736bd30b))
+* release 1.1.17 ([854b110](https://github.com/locona/jira/commit/854b1105b7fa2d9fbe2d8faac0c987c1cd29f70a))
+* **channel:** test ([16dd6ac](https://github.com/locona/jira/commit/16dd6acf66fdbe8a8ed51cfee617dfc19a104cb1))
+* **circleci:** update ([4e265be](https://github.com/locona/jira/commit/4e265be018bb0225f52114b0e4c37e019be64e56))
+* **semantic-release:** new file ([76b855a](https://github.com/locona/jira/commit/76b855a13ae1e07937cc677b1e9d4e797d0471fd))
+
+
+### New Features
+
+* test for squash and merger ([#23](https://github.com/locona/jira/issues/23)) ([066ec69](https://github.com/locona/jira/commit/066ec699e44e5f60d702ce69b5e8ecbaf257a3a2))
+
 ## [1.2.0](https://github.com/locona/jira/compare/v1.1.0...v1.2.0) (2019-12-17)
 
 
