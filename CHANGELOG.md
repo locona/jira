@@ -1,3 +1,10 @@
+### [1.2.2](https://github.com/locona/jira/compare/v1.2.1...v1.2.2) (2019-12-17)
+
+
+### Bug Fixes
+
+* **channel:** use master channel ([770fcb1](https://github.com/locona/jira/commit/770fcb1ffeb769eae2998872a15fdc50c1645441))
+
 ### [1.2.1](https://github.com/locona/jira/compare/v1.2.0...v1.2.1) (2019-12-17)
 
 
