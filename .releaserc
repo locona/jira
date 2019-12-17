@@ -1,6 +1,6 @@
 {
   "branches": [
-    {name: "release/M*", type: 'release', channel: 'latest'}
+    {name: "release/M*", type: 'release', channel: 'master'}
   ],
   "plugins": [
     ["@semantic-release/commit-analyzer", {
