@@ -1,3 +1,35 @@
+### [1.2.1](https://github.com/locona/jira/compare/v1.2.0...v1.2.1) (2019-12-17)
+
+
+### Bug Fixes
+
+* **semantic-release:** fix ([2653f46](https://github.com/locona/jira/commit/2653f467fcbcb44cced8b41ed007d58f7ee0d231))
+* https://github.com/semantic-release/git/issues/119 ([1c742db](https://github.com/locona/jira/commit/1c742dbaf5201d159e60a72a9caa4579e6e4585c))
+* **channel:** update ([3c611a0](https://github.com/locona/jira/commit/3c611a0e96a652abcf014a470cb7752a4188f9ac))
+* **circleci:** fix ([16fd53b](https://github.com/locona/jira/commit/16fd53be2498361b96ddec80e97216e8aaada6cc))
+* **circleci:** fix ([515d4a3](https://github.com/locona/jira/commit/515d4a3612b9ab1d86202234d399a36e5d11b1ed))
+* **circleci:** fix ([c5298d5](https://github.com/locona/jira/commit/c5298d50d2602fbf529f35f384c47762cf247c00))
+* **circleci:** remove dry-run ([0c5385e](https://github.com/locona/jira/commit/0c5385e4cf80bb5325aa177555ca849bb3cda42f))
+* **circleci:** use no-ci ([b885cf3](https://github.com/locona/jira/commit/b885cf3168cdc88b8b8bd383425c6a6ca107c483))
+* **debug:** add file ([87b3ed2](https://github.com/locona/jira/commit/87b3ed27a762e243ce427d376e000e6346b3553d))
+* **debug:** release ([6ef8028](https://github.com/locona/jira/commit/6ef80289d23a41d727bed080008d4abb6f5ee7e1))
+* **semantic-release:** bugfix ([86f269c](https://github.com/locona/jira/commit/86f269c44d836a092906ca83f3d89b9174037c90))
+* **semantic-release:** update ([1404d97](https://github.com/locona/jira/commit/1404d9710bdfa6e9ec14396cbcb86504a05d19f9))
+* **semantic-release:** update ([0d3f2f9](https://github.com/locona/jira/commit/0d3f2f9d5eddad8e29e165587df941ab2ab82b5f))
+* **semantic-release:** update configuration ([0ba7ede](https://github.com/locona/jira/commit/0ba7ede3fa6853cfd340e8bfbbf63fb57cbfbb69))
+* **semantic-release:** update configuration ([93b7b98](https://github.com/locona/jira/commit/93b7b98c96c5e7d1a0c91024e7d263aadd249def))
+* release 1.1.16 ([18a8146](https://github.com/locona/jira/commit/18a81462aa54085cff038b0f66d851c71c9e1605))
+* test ([adf4bb9](https://github.com/locona/jira/commit/adf4bb984d63aa2522c0cb0296119e0641e20199))
+
+
+### Improvement
+
+* add ([daff3e0](https://github.com/locona/jira/commit/daff3e0f227c8cdfb9c7eab15d0a704b0341a67a))
+* **channel:** test ([16dd6ac](https://github.com/locona/jira/commit/16dd6acf66fdbe8a8ed51cfee617dfc19a104cb1))
+* **circleci:** update ([01a7ae9](https://github.com/locona/jira/commit/01a7ae9e59b4af7b048d47740f277fb97bd9dc7a))
+* **package:** upgrade semantic-release ([29c2388](https://github.com/locona/jira/commit/29c2388cdcf1497a2a062a59c5f56a3811eb5297))
+* **semantic-release:** new file ([9571854](https://github.com/locona/jira/commit/95718546f60d6178da429f4b96253630c7588bf6))
+
 ## [1.2.0](https://github.com/locona/jira/compare/v1.1.16...v1.2.0) (2019-12-17)
 
 
