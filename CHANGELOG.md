@@ -1,3 +1,20 @@
+## [1.5.0](https://github.com/locona/jira/compare/v1.4.0...v1.5.0) (2019-12-18)
+
+
+### Bug Fixes
+
+* **semantic-release:** patch version ([c9a31ec](https://github.com/locona/jira/commit/c9a31ec03c1feec7ecf9fee599fd7fb30464c6ac))
+* fix ([9674f33](https://github.com/locona/jira/commit/9674f333f2e58fdb834e213a8346b83426a6559b))
+* fix ([b6a8d1b](https://github.com/locona/jira/commit/b6a8d1be643dcbfcace2e0564e50342b848dfb9b))
+* fix ([6ca6655](https://github.com/locona/jira/commit/6ca6655adef34022e80a606b20988e731dbcd7c2))
+* fix ([5eec11d](https://github.com/locona/jira/commit/5eec11d1a0d1f30fe76fb6d41b2a3cffba2bffc1))
+* fix releaserc ([dced623](https://github.com/locona/jira/commit/dced6235bbb4b7a1192ee7fea10cf9fe4af90a8d))
+
+
+### New Features
+
+* **semantic-release:** channel false ([e5cdfe9](https://github.com/locona/jira/commit/e5cdfe9d5e284682e7ef384d1cb9e7fb10664f9c))
+
 ## [1.4.0](https://github.com/locona/jira/compare/v1.3.0...v1.4.0) (2019-12-18)
 
 
