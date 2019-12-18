@@ -1,8 +1,5 @@
 {
-  "branches": [
-    'master',
-    {name: "release/M*", channel: false}
-  ],
+  "branches": ["release/M*"],
   "plugins": [
     ["@semantic-release/commit-analyzer", {
       "preset": "conventionalcommits",
