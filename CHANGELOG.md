@@ -16,6 +16,18 @@
 ### Bug Fixes
 
 * fix ([69d9b58](https://github.com/locona/jira/commit/69d9b58dc8667830c2f1b4202250e1b24f60233c))
+* fix ([7e9dbe4](https://github.com/locona/jira/commit/7e9dbe4eeaedb169e9c874d8ec9ca74c2fca7b38))
+* fix ([e5c97cc](https://github.com/locona/jira/commit/e5c97ccfef11d814f051a98f6976237e07ac520a))
+* fix ([4df9d2e](https://github.com/locona/jira/commit/4df9d2e3bb4466410dfcb2dad0848e7c47d8b125))
+* fix ([ce104dc](https://github.com/locona/jira/commit/ce104dce2f097803fbaa3a8267aa77f98ead6e64))
+* **channel:** use master channel ([3163438](https://github.com/locona/jira/commit/3163438f9d6168e268ba418b628129109324652e))
+
+### [1.2.4](https://github.com/locona/jira/compare/v1.2.3...v1.2.4) (2019-12-18)
+
+
+### Bug Fixes
+
+* fix ([69d9b58](https://github.com/locona/jira/commit/69d9b58dc8667830c2f1b4202250e1b24f60233c))
 * fix ([e5c97cc](https://github.com/locona/jira/commit/e5c97ccfef11d814f051a98f6976237e07ac520a))
 
 ### [1.2.3](https://github.com/locona/jira/compare/v1.2.2...v1.2.3) (2019-12-17)
