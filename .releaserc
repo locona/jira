@@ -1,7 +1,5 @@
 {
-  "branches": [
-    {name: "release/M*", type: 'release', channel: false}
-  ],
+  "branches": [{name: "release/M*", channel: false}],
   "plugins": [
     ["@semantic-release/commit-analyzer", {
       "preset": "conventionalcommits",
@@ -49,9 +47,11 @@
         ]
       }
     }],
+    ["@semantic-release/git", {
+      "message": "chore(release): ${nextRelease.version} [skip semantic-release]"
+    }],
     "@semantic-release/changelog",
-    "@semantic-release/github",
-    "@semantic-release/git"
+    "@semantic-release/github"
   ]
 }
 
