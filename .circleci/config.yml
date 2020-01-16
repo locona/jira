@@ -25,6 +25,7 @@ jobs:
               npm i
               npx semantic-release --debug
             fi
+
 workflows:
   version: 2
   test_and_release:
