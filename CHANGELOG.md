@@ -1,3 +1,13 @@
+### [1.5.2](https://github.com/locona/jira/compare/v1.5.1...v1.5.2) (2020-01-19)
+
+
+### Bug Fixes
+
+* releaserc ([cac6b11](https://github.com/locona/jira/commit/cac6b114eae1840ca0cfbe3e665ca4d2bf3962cb))
+* releaserc ([#51](https://github.com/locona/jira/issues/51)) ([0bee6fa](https://github.com/locona/jira/commit/0bee6fadde64c19b8a22ddda284023d39cb34e39))
+* releaserc fix typo ([ab05acf](https://github.com/locona/jira/commit/ab05acf0d874c424834e41e7a0c964950bb278f2))
+* releaserc typo ([#54](https://github.com/locona/jira/issues/54)) ([08158d9](https://github.com/locona/jira/commit/08158d98317746c4b7f71c12d140b74c3ad93489))
+
 ## [1.5.0](https://github.com/locona/jira/compare/v1.4.0...v1.5.0) (2019-12-18)
 
 
