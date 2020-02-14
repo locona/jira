@@ -2,6 +2,8 @@
 
 ![Release](https://github.com/locona/jira/workflows/Release/badge.svg)
 
+![action github release qadoc](https://github.com/locona/jira/workflows/action%20github%20release%20qadoc/badge.svg)
+
 jira is a simple command line interface based on the jira module.
 The module uses the REST API to communicate with the Jira instance.
 
