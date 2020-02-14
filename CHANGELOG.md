@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/locona/jira/compare/v1.4.0...v1.5.0) (2019-12-18)
+
+
+### New Features
+
+* **semantic-release:** channel false ([e5cdfe9](https://github.com/locona/jira/commit/e5cdfe9d5e284682e7ef384d1cb9e7fb10664f9c))
+
 ## [1.4.0](https://github.com/locona/jira/compare/v1.3.0...v1.4.0) (2019-12-18)
 
 
