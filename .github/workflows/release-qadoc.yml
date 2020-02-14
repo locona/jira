@@ -16,5 +16,5 @@ jobs:
         uses: locona/action-github-release-qadoc@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          github_repository: ${{ env.GITHUB_REPOSITORY }}
+          github_repository: ${{ github.repository }}
           issue: 55
