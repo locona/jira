@@ -1,8 +1,8 @@
-name: reviewdog
+name: action github release qadoc
+
 on:
   release:
-    types:
-      - created
+    types: [published]
 
 jobs:
   github-release-qadoc:
