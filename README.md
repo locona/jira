@@ -1,4 +1,4 @@
-# jira
+# jira cli
 
 ![Release](https://github.com/locona/jira/workflows/Release/badge.svg)
 
