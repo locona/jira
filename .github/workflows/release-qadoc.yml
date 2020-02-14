@@ -1,8 +1,9 @@
 name: action github release qadoc
 
 on:
-  release:
-    types: [created, published]
+  create:
+    tags:
+    - v*.*.*
 
 jobs:
   release:
