@@ -1,11 +1,9 @@
 name: action github release qadoc
 
-on:
-  release:
-    types: [published]
+on: release
 
 jobs:
-  github-release-qadoc:
+  release:
     name: runner / misspell
     runs-on: ubuntu-latest
     steps:
