@@ -1,9 +1,6 @@
 name: action github release qadoc
 
-on:
-  push:
-    tags:
-    - '*'
+on: [page_build]
 
 jobs:
   release:
