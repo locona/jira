@@ -1,0 +1,19 @@
+name: reviewdog
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  github-release-qadoc:
+    name: runner / misspell
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v1
+      - name: github-release-qadoc
+        uses: locona/action-github-release-qadoc@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_repository: ${{ secrets.GITHUB_REPOSITORY }}
+          issue: 55
