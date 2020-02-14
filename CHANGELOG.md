@@ -1,3 +1,36 @@
+## [1.5.0](https://github.com/locona/jira/compare/v1.4.0...v1.5.0) (2020-02-14)
+
+
+### Bug Fixes
+
+* fix ([206ab8e](https://github.com/locona/jira/commit/206ab8ec88c5f0e68197532310f470a99b5a15b7))
+* fix ([b6a8d1b](https://github.com/locona/jira/commit/b6a8d1be643dcbfcace2e0564e50342b848dfb9b))
+* fix ([5eec11d](https://github.com/locona/jira/commit/5eec11d1a0d1f30fe76fb6d41b2a3cffba2bffc1))
+* fix releaserc ([364948d](https://github.com/locona/jira/commit/364948d9fe20ed5caba2b36735fe2f5c93423030))
+* releaserc ([cac6b11](https://github.com/locona/jira/commit/cac6b114eae1840ca0cfbe3e665ca4d2bf3962cb))
+* releaserc ([#51](https://github.com/locona/jira/issues/51)) ([0bee6fa](https://github.com/locona/jira/commit/0bee6fadde64c19b8a22ddda284023d39cb34e39))
+* releaserc fix typo ([ab05acf](https://github.com/locona/jira/commit/ab05acf0d874c424834e41e7a0c964950bb278f2))
+* sample skip semantic release. add file ([ecb2ff5](https://github.com/locona/jira/commit/ecb2ff58f904b71cfc252b2d424090f32fabcdfc))
+* sample skip semantic release. remove file ([9acc6cd](https://github.com/locona/jira/commit/9acc6cd72360fae56512931f37b0242acf41aa39))
+* sample skip semantic release. remove file ([5a4356d](https://github.com/locona/jira/commit/5a4356d1dfd808c5e3a2e75bdcf6811abfe8b055))
+* sample skip semantic release. remove file ([760361c](https://github.com/locona/jira/commit/760361cfc39500dfba46b6b1d01628713c369ce7))
+* sample skip semantic release. remove file ([#45](https://github.com/locona/jira/issues/45)) ([a0f06d0](https://github.com/locona/jira/commit/a0f06d0b56503a7097d42ba09135a459112bb81a))
+* sample skip semantic release. remove file ([#47](https://github.com/locona/jira/issues/47)) ([441794d](https://github.com/locona/jira/commit/441794d3e2936a0f5621d505d00ab9d097f824e7))
+* test ([391dc50](https://github.com/locona/jira/commit/391dc50193a7212864544494b77434c91b1aaf24))
+* **circleci:** regexp of branch. ([7326611](https://github.com/locona/jira/commit/732661157b397453cdb0f1730544b51e5bec2f7f))
+* **semantic-release:** patch version ([c9a31ec](https://github.com/locona/jira/commit/c9a31ec03c1feec7ecf9fee599fd7fb30464c6ac))
+
+
+### New Features
+
+* Use master branch ([f54448a](https://github.com/locona/jira/commit/f54448a3d6faaff285b413257b4b5222301ff64e))
+* **semantic-release:** channel false ([e5cdfe9](https://github.com/locona/jira/commit/e5cdfe9d5e284682e7ef384d1cb9e7fb10664f9c))
+
+
+### Improvement
+
+* Release use github action. ([846863e](https://github.com/locona/jira/commit/846863e963c885b29449150411310a3ff852ac2e))
+
 ## [1.4.0](https://github.com/locona/jira/compare/v1.3.0...v1.4.0) (2019-12-18)
 
 
