@@ -1,12 +1,12 @@
 name: action github release qadoc
 
 on:
-  push:
-    tags:
-      - '*'
+  release:
+    # Only use the types keyword to narrow down the activity types that will trigger your workflow.
+    types: [published, created, edited]
 
 jobs:
-  release:
+  release-qadoc:
     name: runner / github-release-qadoc
     runs-on: ubuntu-latest
     steps:
