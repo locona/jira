@@ -1,7 +1,9 @@
 name: action github release qadoc
 
 on:
-  push: [tags]
+  push:
+    tags:
+      - v*
 
 jobs:
   release-qadoc:
